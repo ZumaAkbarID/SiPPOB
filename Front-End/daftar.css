@@ -1,0 +1,255 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* BATAS */
+
+body {
+    background-color: rgb(92, 29, 151);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(bg.png);
+}
+hr {
+    background-color: black;
+    width: 100%;
+}
+
+.panel {
+    background-color: whitesmoke;
+    border-radius: 30px;
+    padding: 15px 25px;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: none;
+    
+    /* opacity: 90%; */
+}
+
+.utama-back {
+    display: flex;
+    margin: 10px;
+    
+}
+.utama-back h1 {
+    padding-top: 8px;
+}
+
+.button{
+    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+   
+    padding-right: 20px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.utama-h1{
+    font-weight: 600;
+    margin: 0 0 40px 0;
+    letter-spacing: 1px;
+    font-size: 40px;
+}
+
+ 
+
+input[type = text], input[type = email], input[type = password] {
+    font-size: 15px;
+    border-radius: 50px;
+    padding: 0 10px;
+    width: 65%;
+    margin: 0 0 25px 0;
+    display: inline-block;
+    background-color: white;
+}
+
+input[type = text]:focus, input[type = email]:focus, input[type = password]:focus {
+    background-color: rgb(233, 233, 233);
+}
+
+
+.utama-password {
+    margin: 0 0 40px 0 ;
+}
+
+.utama-button {
+    text-decoration: none;
+    color: white;
+    background-color: blueviolet;
+    border: 1px solid rgb(103, 30, 172);
+    border-radius: 15px;
+    padding: 8px 30px;
+    font-weight: 500;
+    margin: 25px 0;
+    opacity: 0.9;
+}
+
+.utama-button:hover {
+    opacity: 1;
+}
+
+.utama-cek {
+    font-size: 13px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.utama-cek a{
+    text-decoration: none;
+    color: blue;
+}
+
+.utama-cek a:hover{
+    text-decoration: underline;
+}
+
+input[type = checkbox] {
+    display: flex;
+    /* vertical-align: middle; */
+    cursor: pointer;
+    position: relative;
+    top: -7px;
+}
+
+input[type = checkbox]:checked {
+    background-color: blueviolet;
+}
+
+.utama-table {
+    font-size: 12px;
+    margin-top: 20px;
+    justify-content: center; 
+    display: flex;
+     align-items: center;
+}
+
+.utama-table tr {
+    display: flex;
+}
+
+.utama-table {
+    vertical-align: middle;
+    text-align: center;
+}
+.utama-table .td1, 
+.utama-table .td2 {
+    width: 100%;
+    
+} 
+
+.utama-table .td1, .utama-table .td2 {
+    flex: 1;
+    /* max-width: 70%; */
+    /* width: 100%; */
+}
+
+.utama-table .td1 hr, .utama-table .td2 hr{
+    margin-top: 0;
+    width: 100%;
+    border: 10px solid black;
+}
+
+
+.google {
+    width: 10%;
+    max-width: 50px;
+}
+
+.facebook {
+    width: 10%;
+    max-width: 50px;
+}
+.utama-logo button{
+    cursor: pointer;
+    background-color: inherit;
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin: 0 10px 10px 10px;
+    box-shadow: 0.5px 0.5px;
+    opacity: 0.96;
+}
+
+.utama-logo button:hover {
+    opacity: 1;
+}
+.utama-logo {
+    display: flex; 
+    justify-content: center; 
+    margin: 10px;
+    padding: 25px 0 20px 0;
+}
+.utama-border {
+    border-bottom-width: 1px;
+    width: 100%;
+}
+
+.utama-punya-akun {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.utama-punya-akun a{
+    text-decoration: none;
+    color: blue;
+}
+
+.utama-punya-akun a:hover{
+    text-decoration: underline;
+}
+@media screen and (max-width : 300px) {
+    input[type = text], input[type = password] {
+        width: 100%;
+    }
+}
