@@ -63,13 +63,11 @@ hr {
     border-radius: 30px;
     padding: 15px 25px;
     width: 100%;
-    max-width: 450px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    /* text-align: center; */
     text-transform: none;
-    
-    /* opacity: 90%; */
 }
 
 .utama-back {
@@ -85,7 +83,6 @@ hr {
     border-radius: 10px;
     background-color: transparent;
     border: none;
-   
     padding-right: 20px;
 }
 
@@ -98,48 +95,26 @@ hr {
     margin: 0 0 40px 0;
     letter-spacing: 1px;
     font-size: 40px;
+    text-align: center;
 }
 
- 
-
-input[type = text], input[type = email], input[type = password] {
-    font-size: 15px;
-    border-radius: 50px;
-    padding: 0 10px;
-    width: 65%;
-    margin: 0 0 25px 0;
-    display: inline-block;
-    background-color: white;
+.utama-daftar {
+    margin-top: 15px;
+    border: none;
+    border-radius: 7.5px;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #7F27FF;
+    font-size: 18px;
 }
 
-input[type = text]:focus, input[type = email]:focus, input[type = password]:focus {
-    background-color: rgb(233, 233, 233);
-}
-
-
-.utama-password {
-    margin: 0 0 40px 0 ;
-}
-
-.utama-button {
-    text-decoration: none;
+.utama-daftar button {
     color: white;
-    background-color: blueviolet;
-    border: 1px solid rgb(103, 30, 172);
-    border-radius: 15px;
-    padding: 8px 30px;
-    font-weight: 500;
-    margin: 25px 0;
-    opacity: 0.9;
-}
-
-.utama-button:hover {
-    opacity: 1;
 }
 
 .utama-cek {
-    font-size: 13px;
-    margin-top: 20px;
+    font-size: 14px;
+    margin-top: 25px;
     display: flex;
     align-items: center;
 }
@@ -153,91 +128,61 @@ input[type = text]:focus, input[type = email]:focus, input[type = password]:focu
     text-decoration: underline;
 }
 
-input[type = checkbox] {
-    display: flex;
-    /* vertical-align: middle; */
-    cursor: pointer;
-    position: relative;
-    top: -7px;
-}
 
 input[type = checkbox]:checked {
-    background-color: blueviolet;
+    background-color: #7F27FF;
 }
 
 .utama-table {
-    font-size: 12px;
-    margin-top: 20px;
+    margin: 20px 0 20px 0;
     justify-content: center; 
     display: flex;
-     align-items: center;
-}
-
-.utama-table tr {
-    display: flex;
+    align-items: center;
 }
 
 .utama-table {
-    vertical-align: middle;
     text-align: center;
 }
-.utama-table .td1, 
-.utama-table .td2 {
-    width: 100%;
-    
-} 
 
-.utama-table .td1, .utama-table .td2 {
-    flex: 1;
-    /* max-width: 70%; */
-    /* width: 100%; */
+.utama-table p {
+    font-size: 14px;
+    padding: 0 5px 0 5px;
 }
-
-.utama-table .td1 hr, .utama-table .td2 hr{
-    margin-top: 0;
-    width: 100%;
-    border: 10px solid black;
+.google, .discord {
+    width: 25px;
 }
 
 
-.google {
-    width: 10%;
-    max-width: 50px;
+.utama-logo {
+    display: flex; 
+    justify-content: center; 
 }
 
-.facebook {
-    width: 10%;
-    max-width: 50px;
-}
 .utama-logo button{
-    cursor: pointer;
-    background-color: inherit;
+    background-color: transparent;
     border-radius: 10px;
     align-items: center;
     display: flex;
     justify-content: center;
     padding: 5px;
     margin: 0 10px 10px 10px;
-    box-shadow: 0.5px 0.5px;
-    opacity: 0.96;
+    opacity: 0.9;
 }
 
 .utama-logo button:hover {
     opacity: 1;
 }
-.utama-logo {
-    display: flex; 
-    justify-content: center; 
-    margin: 10px;
-    padding: 25px 0 20px 0;
-}
-.utama-border {
-    border-bottom-width: 1px;
-    width: 100%;
+
+.utama-logo a {
+    text-decoration: none;
 }
 
+.utama-logo p {
+    padding-left: 10px;
+}
 .utama-punya-akun {
-    font-size: 13px;
+    text-align: center;
+    font-size: 14px;
     margin-bottom: 20px;
 }
 .utama-punya-akun a{
@@ -248,6 +193,8 @@ input[type = checkbox]:checked {
 .utama-punya-akun a:hover{
     text-decoration: underline;
 }
+
+
 @media screen and (max-width : 300px) {
     input[type = text], input[type = password] {
         width: 100%;

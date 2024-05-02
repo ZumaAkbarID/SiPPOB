@@ -4,37 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOPUP IN</title>
-    <link rel="stylesheet" href="landing.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="landing.css">
 </head>
 <body>
     <nav class="navbar" id="Beranda">
         <a href="#"><img src="icon/logotopupin.png" alt="TopUpIn" class="logo-utama"></a>
 
         <div class="navbar-search">
-                <form action="#">
-                    <input type="text" placeholder="Cari Game, Voucher, atau Produk Lainnya">
-                    <button type="submit" class="search-logo"><i class="fa fa-search"></i></button>
-                </form>
-            
+            <nav class="navbar">
+                <div class="container">
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                        <div class="input-group">
+                            <input name="searchField" id="searchField" type="search" class="form-control form-control-dark" style="width: 700px; " placeholder="Search">
+                            <button class="btn" type="button">Search</button>
+                        </div>                       
+                    </form>                    
+                </div>
+            </nav>
         </div>
         
         <div class="navbar-masukdaftar">
-            <a href="login.html"><button type="button" class="masukdaftar-masuk">Masuk</button></a>
-            <a href="daftar.html"><button type="button" class="masukdaftar-daftar">Daftar</button></a>
+            <a href="login.html">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="masukdaftar-masuk" type="button">Masuk</button>                 
+                </div>
+            </a>
+            <a href="daftar.html">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="masukdaftar-daftar" type="button">Daftar</button>                 
+                </div>
+            </a>
+            
         </div>
-
     </nav>
         
     <nav class="menu">
         <div class="menu-nav">
-            <a href="#Beranda">Beranda</a>
-            <a href="#Promo">Kode Promo</a>
-            <a href="#Game">Game</a>
-            <a href="#Pulsa">Pulsa</a>
-            <a href="#Voucher">Voucher</a>
-            <a href="#Kontak">Kontak</a>
+            <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#Beranda">Beranda</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#Promo">Kode Promo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#Pulsa">Pulsa</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#Voucher">Voucher</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Kontak">Kontak</a>
+                  </li>
+            </ul>
         </div>
     </nav>
     
@@ -45,57 +69,32 @@
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum dolore ad temporibus a perferendis, eaque tempora aliquam ex amet culpa corrupti veniam deleniti, reprehenderit debitis hic, magni fuga at nostrum provident suscipit impedit nam adipisci voluptatibus sit. Rem voluptas accusamus iusto maiores itaque. Voluptate nemo, enim quis eligendi architecto reiciendis.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia fuga maiores aut perferendis numquam voluptate, dolor consequuntur, eos saepe corrupti est amet aliquam iste qui.</p>
         </div>
 
-
         <div class="panel-promo" id="Promo">
 
                 <h3>KODE PROMO</h3>
                 <h1>Hemat Dengan Kode Promo</h1>
 
             <div class="promo-utama">   
-                <!-- <div class="promo-tiket">
-                    <h2>Diskon 10%</h2>
-                    <p>Dapatkan diskon 10% setiap pembelian di atas 100ribu</p>
-                    <div class="tiket-keterangan">
-                        <p>Gunakan Kode Promo: <span>XXX000</span></p>
-                    </div>
-                    <p class="expired">Expired: 20 Juni 2024</p>
-                </div>
-                <div class="promo-tiket">
-                    <h2>Diskon 10%</h2>
-                    <p>Dapatkan diskon 10% setiap pembelian di atas 100ribu</p>
-                    <div class="tiket-keterangan">
-                        <p>Gunakan Kode Promo: <span>XXX000</span></p>
-                    </div>
-                    <p class="expired">Expired: 20 Juni 2024</p>
-                </div>
-
-                <div class="promo-tiket">
-                    <h2>Diskon 10%</h2>
-                    <p>Dapatkan diskon 10% setiap pembelian di atas 100ribu</p>
-                    <div class="tiket-keterangan">
-                        <p>Gunakan Kode Promo: <span>XXX000</span></p>
-                        <p class="expired">Expired: 20 Juni 2024</p>
-                    </div> -->
-                    <a href="#">
-                        <div class="foto-diskon">
+                <a href="#">
+                    <div class="foto-diskon">
                         <img src="diskon/1.png" alt="">
-                    </div></a>
+                    </div>
+                </a>
 
-                
+                <a href="#">
+                    <div class="foto-diskon">
+                        <img src="diskon/1.png" alt="">
+                    </div>
+                </a>
 
-                <div class="foto-diskon">
-                    <img src="diskon/1.png" alt="">
-                </div>
-
-                <div class="foto-diskon">
-                    <img src="diskon/1.png" alt="">
-                </div>
-                
-                    
-                </div>
+                <a href="#">
+                    <div class="foto-diskon">
+                        <img src="diskon/1.png" alt="">
+                    </div>
+                </a>                                   
             </div>
-
         </div>
+
 
         <div class="game-populer" id="Game">
             <h3>GAME POPULER</h3>
@@ -111,7 +110,9 @@
                             <p>Garena Mobile Private</p>
                         </div>
                     </div>
-                    <button type="button" class="topup">TOP UP</button>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
                 </a>
 
                 <a href="#">
@@ -119,11 +120,13 @@
                     <div class="gambar-logo">
                         <img src="icon/logo-ff.png" alt="" class="logo">
                         <div class="logo-tulisan">
-                            <h3>Call of Duty Mobile</h3>
-                            <p>Garena Mobile Private</p>
+                            <h3>Free Fire</h3>
+                            <p>Garena International</p>
                         </div>
                     </div>
-                    <button type="button" class="topup">TOP UP</button>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
                 </a>
 
                 <a href="#">
@@ -131,11 +134,13 @@
                     <div class="gambar-logo">
                         <img src="icon/logo-ml.png" alt="" class="logo">
                         <div class="logo-tulisan">
-                            <h3>Call of Duty Mobile</h3>
-                            <p>Garena Mobile Private</p>
+                            <h3>Mobile Legends</h3>
+                            <p>Moonton</p>
                         </div>
                     </div>
-                    <button type="button" class="topup">TOP UP</button>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
                 </a>
                 
                 <a href="#">
@@ -143,11 +148,13 @@
                     <div class="gambar-logo">
                         <img src="icon/logo-genshin.png" alt="" class="logo">
                         <div class="logo-tulisan">
-                            <h3>Call of Duty Mobile</h3>
-                            <p>Garena Mobile Private</p>
+                            <h3>Genshin Impact</h3>
+                            <p>COGNOSHEPERE PTE. LTD.</p>
                         </div>
                     </div>
-                    <button type="button" class="topup">TOP UP</button>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
                 </a>
             </div>
         </div>
@@ -158,6 +165,34 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore magni veritatis, ullam pariatur excepturi ex dolore, cumque molestias adipisci tenetur perspiciatis, vitae consequuntur omnis sunt? Quos, incidunt! Obcaecati quidem temporibus quae molestias, maiores doloribus esse libero natus ipsam ab numquam corporis perspiciatis consectetur nemo nam. Voluptatum veritatis voluptas quisquam dolore.</p>
 
             <div class="gambar-topup">
+
+                <a href="#">
+                    <img src="icon/aov.png" alt="" class="gambar">
+                    <div class="gambar-logo">
+                        <img src="icon/logo-aov.png" alt="" class="logo">
+                        <div class="logo-tulisan">
+                            <h3>Arena of Valor</h3>
+                            <p>MOBA Games Private</p>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <img src="icon/coc.png" alt="" class="gambar">
+                    <div class="gambar-logo">
+                        <img src="icon/logo-coc.png" alt="" class="logo">
+                        <div class="logo-tulisan">
+                            <h3>Clash of Clans</h3>
+                            <p>Supercell</p>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
+                </a>
                 <a href="#">
                     <img src="icon/COD.png" alt="" class="gambar">
                     <div class="gambar-logo">
@@ -167,7 +202,23 @@
                             <p>Garena Mobile Private</p>
                         </div>
                     </div>
-                    <button type="button" class="topup">TOP UP</button>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <img src="icon/dragonraja.png" alt="" class="gambar">
+                    <div class="gambar-logo">
+                        <img src="icon/logo-dragonraja.png" alt="" class="logo">
+                        <div class="logo-tulisan">
+                            <h3>Dragib Raja - SEA</h3>
+                            <p>Archosaur Games</p>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
                 </a>
 
                 <a href="#">
@@ -175,46 +226,238 @@
                     <div class="gambar-logo">
                         <img src="icon/logo-ff.png" alt="" class="logo">
                         <div class="logo-tulisan">
-                            <h3>Call of Duty Mobile</h3>
-                            <p>Garena Mobile Private</p>
+                            <h3>Free Fire</h3>
+                            <p>Garena International</p>
                         </div>
                     </div>
-                    <button type="button" class="topup">TOP UP</button>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
                 </a>
 
-                <a href="#">
-                    <img src="icon/ML.png" alt="" class="gambar">
-                    <div class="gambar-logo">
-                        <img src="icon/logo-ml.png" alt="" class="logo">
-                        <div class="logo-tulisan">
-                            <h3>Call of Duty Mobile</h3>
-                            <p>Garena Mobile Private</p>
-                        </div>
-                    </div>
-                    <button type="button" class="topup">TOP UP</button>
-                </a>
-                
                 <a href="#">
                     <img src="icon/Genshin.png" alt="" class="gambar">
                     <div class="gambar-logo">
                         <img src="icon/logo-genshin.png" alt="" class="logo">
                         <div class="logo-tulisan">
-                            <h3>Call of Duty Mobile</h3>
-                            <p>Garena Mobile Private</p>
+                            <h3>Genshin Impact</h3>
+                            <p>COGNOSHEPERE PTE. LTD.</p>
                         </div>
                     </div>
-                    <button type="button" class="topup">TOP UP</button>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <img src="icon/laplacem.png" alt="" class="gambar">
+                    <div class="gambar-logo">
+                        <img src="icon/logo-laplacem.png" alt="" class="logo">
+                        <div class="logo-tulisan">
+                            <h3>Laplace M</h3>
+                            <p>ZiongGames</p>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <img src="icon/ML.png" alt="" class="gambar">
+                    <div class="gambar-logo">
+                        <img src="icon/logo-ml.png" alt="" class="logo">
+                        <div class="logo-tulisan">
+                            <h3>Mobile Legends</h3>
+                            <p>Moonton</p>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <img src="icon/pubg.png" alt="" class="gambar">
+                    <div class="gambar-logo">
+                        <img src="icon/logo-pubg.png" alt="" class="logo">
+                        <div class="logo-tulisan">
+                            <h3>PUBG MOBILE</h3>
+                            <p>Level Infinite</p>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <img src="icon/ragnarok.png" alt="" class="gambar">
+                    <div class="gambar-logo">
+                        <img src="icon/logo-ragnarok.png" alt="" class="logo">
+                        <div class="logo-tulisan">
+                            <h3>Ragnarok M: Eternal Love</h3>
+                            <p>Gravity Interactive, Inc.</p>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <img src="icon/sausageman.png" alt="" class="gambar">
+                    <div class="gambar-logo">
+                        <img src="icon/logo-sausageman.png" alt="" class="logo">
+                        <div class="logo-tulisan">
+                            <h3>Sausage Man</h3>
+                            <p>XD Entertainment Pte Ltd</p>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <img src="icon/speeddrifter.png" alt="" class="gambar">
+                    <div class="gambar-logo">
+                        <img src="icon/logo-speeddrifter.png" alt="" class="logo">
+                        <div class="logo-tulisan">
+                            <h3>Speed Drifters</h3>
+                            <p>Garena Games Online</p>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="topup" type="button">TOP UP</button>
+                    </div>
                 </a>
             </div>
 
+            <!-- PULSA -->
             <div class="pulsa" id="Pulsa">                
                 <h1>Pulsa</h1>
 
+                <div class="gambar-pulsa">
+                    <a href="#">
+                        <img src="icon/axis.png" alt="" class="gambar">
+                        <div class="gambar-logo">
+                            <img src="icon/logo-axis.png" alt="" class="logo">
+                            <div class="logo-tulisan">
+                                <h3>Pulsa Axis</h3>
+                                <p>AXIS by XL Axiata</p>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="topup" type="button">TOP UP</button>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <img src="icon/indosat.png" alt="" class="gambar">
+                        <div class="gambar-logo">
+                            <img src="icon/logo-indosat.png" alt="" class="logo">
+                            <div class="logo-tulisan">
+                                <h3>Pulsa Indosat</h3>
+                                <p>Indosat Ooredoo</p>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="topup" type="button">TOP UP</button>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <img src="icon/telkomsel.png" alt="" class="gambar">
+                        <div class="gambar-logo">
+                            <img src="icon/logo-telkomsel.png" alt="" class="logo">
+                            <div class="logo-tulisan">
+                                <h3>Pulsa Telkomsel</h3>
+                                <p>Telkomsel</p>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="topup" type="button">TOP UP</button>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <img src="icon/tri.png" alt="" class="gambar">
+                        <div class="gambar-logo">
+                            <img src="icon/logo-tri.png" alt="" class="logo">
+                            <div class="logo-tulisan">
+                                <h3>Pulsa Tri</h3>
+                                <p>Indosat Ooredoo</p>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="topup" type="button">TOP UP</button>
+                        </div>
+                    </a>
+                </div>
             </div>
 
+            <!-- VOUCHER -->
             <div class="voucher" id="Voucher">
                 <h1>Voucher</h1>
 
+                <div class="gambar-voucher">
+                        <a href="#">
+                            <img src="icon/garenashell.png" alt="" class="gambar">
+                            <div class="gambar-logo">
+                                <img src="icon/logo-garenashell.png" alt="" class="logo">
+                                <div class="logo-tulisan">
+                                    <h3>Voucher Garena Shell</h3>
+                                    <p>Garena</p>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="topup" type="button">TOP UP</button>
+                            </div>
+                        </a>
+    
+                        <a href="#">
+                            <img src="icon/gplay.png" alt="" class="gambar">
+                            <div class="gambar-logo">
+                                <img src="icon/logo-gplay.png" alt="" class="logo">
+                                <div class="logo-tulisan">
+                                    <h3>Voucher Google Play</h3>
+                                    <p>Google Play</p>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="topup" type="button">TOP UP</button>
+                            </div>
+                        </a>
+    
+                        <a href="#">
+                            <img src="icon/roblox.png" alt="" class="gambar">
+                            <div class="gambar-logo">
+                                <img src="icon/logo-roblox.png" alt="" class="logo">
+                                <div class="logo-tulisan">
+                                    <h3>Voucher Roblox</h3>
+                                    <p>Roblox Corporation</p>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="topup" type="button">TOP UP</button>
+                            </div>
+                        </a>
+    
+                        <a href="#">
+                            <img src="icon/steamwallet.png" alt="" class="gambar">
+                            <div class="gambar-logo">
+                                <img src="icon/logo-steamwallet.png" alt="" class="logo">
+                                <div class="logo-tulisan">
+                                    <h3>Voucher Steam Wallet</h3>
+                                    <p>Valve Corporation</p>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="topup" type="button">TOP UP</button>
+                            </div>
+                        </a>
+                </div>
             </div>
         </div>
         
@@ -223,7 +466,7 @@
     <footer class="footer-utama" id="Kontak">
         <div class="footer-pertama">
             <div class="pertama-banget">
-                <h2>TOPUP IN: Top-up termurah, tercepat, dan terpercaya</h2>
+                <h2>TOP-UP IN: Top-up termurah, tercepat, dan terpercaya</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti at consequatur mollitia quibusdam, hic consequuntur necessitatibus saepe quasi impedit earum. Reiciendis labore ipsum perferendis eaque!</p>
     
                 
@@ -244,6 +487,33 @@
                     <a href="#">
                         <img src="icon/sampoerna.png" alt="" class="pembayaran">
                     </a>
+                    <a href="#">
+                        <img src="icon/dana.png" alt="" class="pembayaran">
+                    </a>
+                    <a href="#">
+                        <img src="icon/ovo.png" alt="" class="pembayaran">
+                    </a>
+                    <a href="#">
+                        <img src="icon/qris.png" alt="" class="pembayaran">
+                    </a>
+                    <a href="#">
+                        <img src="icon/atmbersama.png" alt="" class="pembayaran">
+                    </a>
+                    <a href="#">
+                        <img src="icon/bni.png" alt="" class="pembayaran">
+                    </a>
+                    <a href="#">
+                        <img src="icon/bri.png" alt="" class="pembayaran">
+                    </a>
+                    <a href="#">
+                        <img src="icon/mandiri.png" alt="" class="pembayaran">
+                    </a>
+                    <a href="#">
+                        <img src="icon/bsi.png" alt="" class="pembayaran">
+                    </a>
+                    <a href="#">
+                        <img src="icon/muamalat.png" alt="" class="pembayaran">
+                    </a>
                 </div>
             </div>
         </div>
@@ -255,24 +525,50 @@
                 
             </div>
             <div class="kedua-button">
-                <a href="daftar.html"><button type="button" class="button-daftar">Buat Akun Baru!</button></a>
+                <a href="daftar.html">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="button-daftar" type="button">Buat Akun Baru!</button>                 
+                    </div>
+                </a>
             </div>
         </div>
 
         <div class="footer-ketiga">
             <div class="ketiga-kontak">
                 <h2>Kontak Kami</h2>
-                <h3>Top</h3>
+                
+                <h3>TOP-UP IN</h3>
+
+                <p>Jl.kurma No 01 leles, RT 01/RW 18 Condongcatur, Depok, Sleman, Yogyakarta</p>
+                <p>support@gmail.com</p>
+                <p>+62 8xx-xxxx-xxxx</p>
             </div>
 
-            <div class="ketiga-apa">
-                
+            <div class="ketiga-topupin">
+                <h2>TOP-UP IN</h2>
+                <ul>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
+                </ul>
             </div>
+
+            <div class="ketiga-ikuti">
+                <h2>Ikuti Kami</h2>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Discord</a></li>
+                </ul>
+            </div>           
+        </div>
+
+        <div class="hakcipta">
+            <h2>Hak Cipta &copy; TOP-UP IN</h2>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>
-
-<!-- Path: Front-End/landing.css (Coba Commit) -->
