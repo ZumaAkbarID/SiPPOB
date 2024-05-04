@@ -1,11 +1,12 @@
 <script setup>
 import landingpage from './components/landingpage.vue'
+
+import hero from './components/hero.vue'
 </script>
 
 <template>
-  
-
   <main>
+    <hero />
     <landingpage />
   </main>
 </template>
