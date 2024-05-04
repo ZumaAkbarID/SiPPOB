@@ -11,9 +11,18 @@ importers:
       bootstrap:
         specifier: 5.3.3
         version: 5.3.3(@popperjs/core@2.11.8)
+      swiper:
+        specifier: ^11.1.1
+        version: 11.1.1
       vue:
         specifier: ^3.4.21
         version: 3.4.26
+      vue-awesome-swiper:
+        specifier: ^5.0.1
+        version: 5.0.1(swiper@11.1.1)(vue@3.4.26)
+      vue3-carousel:
+        specifier: ^0.3.3
+        version: 0.3.3(vue@3.4.26)
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
@@ -819,6 +828,10 @@ packages:
   svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
 
+  swiper@11.1.1:
+    resolution: {integrity: sha512-jGmEA/fNz1lACIcY4/40ggm1Gcyv+EUivmgV/Jd2WFPsEJhbWXnRAwzZR8OPjkBLtDxmzcoYG/iiAMWfRs0YKQ==}
+    engines: {node: '>= 4.7.0'}
+
   to-fast-properties@2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
@@ -890,6 +903,17 @@ packages:
         optional: true
       terser:
         optional: true
+
+  vue-awesome-swiper@5.0.1:
+    resolution: {integrity: sha512-mWjFJzUqA4lG+DmsmibvMpoiBnl+IH2SSeiiQ3i5M0t1y9FknTxnGT0DsMb2YdJLgjYMEK3sYOWzqgLnZMH8Lg==}
+    peerDependencies:
+      swiper: ^7.0.0  || ^8.0.0
+      vue: 3.x
+
+  vue3-carousel@0.3.3:
+    resolution: {integrity: sha512-VsuOBE4LG9lxAiYGR9U7ps4RyJ4oFQGzk79/49ybvoxzNpahPAVWIDHKK3a1lOv0CSplFq6u4FvaFLZ8x3FgWg==}
+    peerDependencies:
+      vue: ^3.2.0
 
   vue@3.4.26:
     resolution: {integrity: sha512-bUIq/p+VB+0xrJubaemrfhk1/FiW9iX+pDV+62I/XJ6EkspAO9/DXEjbDFoe8pIfOZBqfk45i9BMc41ptP/uRg==}
@@ -1664,6 +1688,8 @@ snapshots:
 
   svg-tags@1.0.0: {}
 
+  swiper@11.1.1: {}
+
   to-fast-properties@2.0.0: {}
 
   totalist@3.0.1: {}
@@ -1734,6 +1760,15 @@ snapshots:
       rollup: 4.17.2
     optionalDependencies:
       fsevents: 2.3.3
+
+  vue-awesome-swiper@5.0.1(swiper@11.1.1)(vue@3.4.26):
+    dependencies:
+      swiper: 11.1.1
+      vue: 3.4.26
+
+  vue3-carousel@0.3.3(vue@3.4.26):
+    dependencies:
+      vue: 3.4.26
 
   vue@3.4.26:
     dependencies:
