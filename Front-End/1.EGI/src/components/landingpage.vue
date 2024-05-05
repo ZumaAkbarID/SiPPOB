@@ -1,14 +1,13 @@
-<!-- Landing Page Begin -->
 <template>
   <div class="landing">
     <div class="container">
-      <h1 class="display-4  ">Selamat Datang di Top-Up Game!</h1>
+      <h1 class="display-4">Selamat Datang di Top-Up Game!</h1>
       <p class="lead">
         Kami menyediakan layanan top-up untuk berbagai game populer.
         Silakan pilih game favorit Anda dan mulai top-up sekarang!
       </p>
       <div class="row">
-        <div v-for="game in games" :key="game.id" class="col-md-4">
+        <div v-for="game in games" :key="game.id" class="col-lg-4 col-md-6 col-sm-12">
           <div class="card mb-4 shadow-sm game-card">
             <img :src="game.image" class="card-img-top" :alt="game.name">
             <div class="card-body">
@@ -21,10 +20,7 @@
     </div>
   </div>
 </template>
-<!-- Landing Page End -->
 
-
-<!-- Script Begin -->
 <script>
 export default {
   data() {
@@ -51,14 +47,23 @@ export default {
   }
 };
 </script>
-<!-- Script End -->
 
-
-<!-- Style Begin -->
 <style scoped>
 .landing {
   padding: auto;
   background-color: #7F27FF; /* Warna ungu */
+  font-family: 'Poppins', sans-serif; /* Mengubah font menjadi Poppins */
+}
+
+.display-4 {
+  font-size: 2.5rem; /* Ukuran judul yang lebih besar */
+  font-weight: 700; /* Ketebalan judul */
+  color: #fff; /* Warna teks putih */
+}
+
+.lead {
+  font-size: 1.25rem; /* Ukuran teks yang sedikit lebih besar */
+  color: #fff; /* Warna teks putih */
 }
 
 .game-card {
@@ -111,5 +116,16 @@ export default {
 .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.5); /* Efek bayangan saat fokus */
 }
+
+@media (max-width: 992px) {
+  .card-img-top {
+    height: 150px; /* Atur tinggi gambar untuk layar berukuran kecil */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 10px; /* Atur margin bawah kartu untuk layar berukuran kecil */
+  }
+}
 </style>
-<!-- Style End -->
