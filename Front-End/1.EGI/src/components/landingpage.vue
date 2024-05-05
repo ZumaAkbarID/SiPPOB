@@ -1,8 +1,8 @@
 <template>
   <div class="landing">
     <div class="container">
-      <h1 class="display-4">Selamat Datang di Top-Up Game!</h1>
-      <p class="lead">
+      <h1 class="display-4 mb-4">Selamat Datang di TOP-UP IN!</h1> <!-- Tambahkan mb-4 untuk memberi jarak bawah -->
+      <p class="lead mb-4"> <!-- Tambahkan mb-4 untuk memberi jarak bawah -->
         Kami menyediakan layanan top-up untuk berbagai game populer.
         Silakan pilih game favorit Anda dan mulai top-up sekarang!
       </p>
