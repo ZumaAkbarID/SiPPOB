@@ -2,19 +2,19 @@
   <div class="hero">
     <div class="carousel-container">
       <div class="carousel-control left" @click="prevSlide">
-        <span class="material-icons"><</span>
+      
       </div>
       <Carousel
         :items-to-show="1"
         :wrap-around="true"
         :transition="500"
-        :autoplay="5000"
+        :autoplay="2500"
         :pauseAutoplayOnHover="true"
         :model-value="currentSlide"
         ref="carousel"
       >
         <Slide v-for="(slide, index) in slides" :key="index">
-          <img :src="slide.imgSrc" alt="slide" class="d-block w-100 carousel-img" />
+          <img :src="slide.imgSrc" alt="slide" class="carousel-img" />
           <div class="carousel-caption">
             <h3>{{ slide.title }}</h3>
             <p>{{ slide.description }}</p>
@@ -22,7 +22,6 @@
         </Slide>
       </Carousel>
       <div class="carousel-control right" @click="nextSlide">
-        <span class="material-icons">></span>
       </div>
     </div>
     <div class="carousel-indicators">
@@ -91,45 +90,43 @@ export default {
 
 .carousel-container {
   position: relative;
-  display: active;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto;
-  width: 600px;
-  height: auto;
-  padding: 10px;
+  width: 90%; /* Lebar relatif untuk responsif */
 }
 
 .carousel-control {
   position: absolute;
-  top: 50%;
+  top: 1000%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 1);
-  color: #7F27FF;
-  font-size: 36px;
-  padding: 10px;
-  border-radius: 50%;
+  background-color: #7F27FF;
+  color: #fff;
+  font-size: 10px;
+  padding: 0px;
+  border-radius: 100%;
   cursor: pointer;
   transition: background-color 0.3s ease;
   z-index: 1;
 }
 
 .carousel-control.left {
-  left: 50px; /* Mengatur posisi untuk tombol kiri */
+    left: 20px; /* Mengatur posisi untuk tombol kiri */
+  border-radius: 50%; /* Menjadikan tombol kiri bulat */
 }
 
 .carousel-control.right {
-  right: 50px; /* Mengatur posisi untuk tombol kanan */
+   right: 20px; /* Mengatur posisi untuk tombol kanan */
+  border-radius: 50%; /* Menjadikan tombol kanan bulat */
 }
 
-
 .carousel-control:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .carousel-img {
-  border-radius: 40px;
-  box-shadow: 0 0 0  rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Sesuaikan gambar agar ukurannya sama */
+  width: 100%; /* Gambar memenuhi lebar container */
+  border-radius: 20px; /* Sudut border gambar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan gambar */
 }
 
 .carousel-caption {
@@ -176,17 +173,7 @@ export default {
 /* Material Icons */
 .material-icons {
   font-family: 'Material Icons', sans-serif;
-  font-weight: normal;
-  font-style: normal;
   font-size: 36px;
   line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
 }
 </style>
