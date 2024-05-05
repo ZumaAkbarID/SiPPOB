@@ -51,7 +51,7 @@ body {
 
 .logo-utama{
     padding-left: 100px;
-    width: 200px;
+    width: 300px;
     margin-right: auto;
 }
 .navbar {
@@ -63,9 +63,10 @@ body {
 }
 
 .navbar-search {
-    width: 100px;
     position: relative;
-    left: 20%;
+    left: 15%;
+    justify-content: center;
+    display: flex;
 }
 
 .navbar-search form {
@@ -73,29 +74,24 @@ body {
     align-items: center;
 }
 
-.navbar-search input[type="text"] {
-    /* flex: 1; */
-    border-radius: 30px;
-    border: none;
-    padding: 3px 50px;
-    font-size: 17px;
-    background-color: white;
-    color: black;
+.navbar-search button {    border: none;
+    color: white;
+    background-color: #FF8911;
 }
 
-
-.navbar-search button {
-    border: none;
+.navbar-search button:hover {
+    background-color: #FF8911;
     color: white;
-    background-color: transparent;
-    cursor: pointer;
 }
 
 .navbar-masukdaftar {
     display: flex;
-    justify-content: center;
     margin-left: auto;
-    padding-right: 200px;
+    padding-right: 100px;
+}
+
+.navbar-masukdaftar a {
+    text-decoration: none;
 }
 
 .masukdaftar-masuk{
@@ -105,9 +101,10 @@ body {
     cursor: pointer;
     background-color: #FF8911;
     margin-right: 20px;
-    padding: 5px 12px;
+    padding: 6px 12px;
     opacity: 0.95;
-    /* width: 75px; */
+    width: 85px;
+    height: 38px;
     font-size: 18px;
 }
 
@@ -117,13 +114,10 @@ body {
     color: #ffffff;
     cursor: pointer;
     background-color: #FF8911;
-    padding: 5px 12px;
-    opacity: 0.95;
-    width: 75px;
-}
-
-.masukdaftar-masuk:hover, .masukdaftar-daftar:hover{
-    opacity: 1;
+    padding: 6px 12px;
+    font-size: 18px;
+    width: 85px;
+    height: 38px
 }
 
 .menu {
@@ -133,30 +127,28 @@ body {
     justify-content: center;
 }
 .menu-nav {
-    display: flex;
-    align-items: center; 
-    font-size: 20px;
+    display: flex; 
+    font-size: 19px;
     font-weight: bold;
-
 }
 
 .menu-nav a{
     padding: 10px;
     color: white;
     text-decoration: none;
-    opacity: 0.8;
-    /* box-shadow: 1px 0px black; */
+    opacity: 0.9;
 }
+
 .menu-nav a:hover{
     border-radius: 5px;
+    color: white;
     opacity: 1;
 }
 
 /* SECTION */
 
 .panel-utama {
-    margin: 50px 100px;
-    
+    margin: 50px 125px;
 }
 
 .panel-kenalan{
@@ -233,6 +225,7 @@ body {
 }
 .game-populer {
     margin-bottom: 50px;
+    
 }
 
 .game-populer h3{
@@ -251,16 +244,17 @@ body {
 .populer-gambar{
     /* cursor: pointer; */
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 .populer-gambar a {
     margin-left: 2.5%;
     margin-right: 2.5%;
+    text-decoration: none;
 }
 .gambar-logo{
-    margin: 15px 0 15px 20px;
+    margin: 15px 0 0 20px;
     display: flex;
 }
 
@@ -273,7 +267,7 @@ body {
 }
 
 .logo-tulisan p {
-    text-decoration:dashed;
+    margin-bottom: 40px;
 }
 
 .logo-tulisan p:hover {
@@ -298,14 +292,7 @@ body {
     border: none;
     border-end-end-radius: 3px;
     border-end-start-radius: 3px;
-    width: 280px;
     height: 28px;
-    cursor: pointer;
-    opacity: 0.9;
-}
-
-.topup:hover {
-    opacity: 1;
 }
 
 /* GAME */
@@ -331,16 +318,16 @@ body {
 }
 
 .gambar-topup{
-    /* cursor: pointer; */
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    
 }
 
 .gambar-topup a {
     margin-left: 2.5%;
     margin-right: 2.5%;
+    text-decoration: none;
+    margin-bottom: 2%;
 }
 
 .logo-tulisan {
@@ -355,34 +342,90 @@ body {
 .logo-tulisan p{
     font-size: 13px;
     color: rgb(68, 68, 68);
-    /* text-decoration: none; */
 }
 
 /* PULSA */
 
+.pulsa {
+    margin-top: 40px;
+}
 .pulsa h1 {
     margin-bottom: 15px;
     font-size: 30px;
     font-weight: bold;
 }
 
+.gambar-pulsa{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gambar-pulsa a {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    text-decoration: none;
+    margin-bottom: 2%;
+}
+
+.logo-tulisan {
+    margin-left: 10px;
+}
+.logo-tulisan h3{
+    color:  black;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.logo-tulisan p{
+    font-size: 13px;
+    color: rgb(68, 68, 68);
+}
 
 /* VOUCHER */
 
+.voucher {
+    margin-top: 40px;
+}
 .voucher h1 {
     margin-bottom: 15px;
     font-size: 30px;
     font-weight: bold;
 }
 
+.gambar-voucher{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.gambar-voucher a {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    text-decoration: none;
+    margin-bottom: 2%;
+}
+
+.logo-tulisan {
+    margin-left: 10px;
+}
+.logo-tulisan h3{
+    color:  black;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.logo-tulisan p{
+    font-size: 13px;
+    color: rgb(68, 68, 68);
+}
 /* FOOTER */
 
 .footer-utama {
-    background-color: whitesmoke;
+    background-color: white;
 }
 .footer-pertama {
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .pertama-banget {
@@ -406,11 +449,13 @@ body {
 }
 
 .logo-pembayaran {
-    /* background-color:  rgb(231, 185, 125);
-    background-color: #FDBF60;
-    border-radius: 15px; */
     margin-bottom: 50px; 
 }
+
+.logo-pembayaran a {
+    text-decoration: none;
+}
+
 .dukung {
 padding: 10px 0 0 10px; 
 }
@@ -424,10 +469,11 @@ padding: 10px 0 0 10px;
 }
 
 .kedua-banget {
-    padding: 30px 0 30px 100px;
+    padding: 30px 0 30px 150px;
     margin-right: auto;
     color: white;
 }
+
 .kedua-banget h2 {
     font-weight: bold;
     font-size: 25px;
@@ -441,21 +487,64 @@ padding: 10px 0 0 10px;
 
 .kedua-button {
     padding-right: 200px;
-
 }
+
+.kedua-button a{
+    text-decoration: none;
+}
+
 .button-daftar {
     border: none;
-    border-radius: 2px;
-    color: #7F27FF;
+    border-radius: 7.5px;
+    color: #ffffff;
     cursor: pointer;
-    background-color: #ffffff;
-    padding: 5px 12px;
+    background-color: #FF8911;
+    margin-right: 20px;
+    padding: 7px 12px;
     opacity: 0.95;
-    display: flex;
-    margin-left: auto;
+    font-size: 18px;
+    height: 40px;
 }
 
-/* .button-daftar a {
-    text-decoration: none;
+/* NOTE MASIH ACAK-ACAK AN footer ketiganya, class ketiga-kontak sm ketiga-topupin & ketiga-ikuti ga sejajar */
+
+
+/* .footer-ketiga {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+.ketiga-kontak {
+    padding: 50px 0 10px 300px;
+    margin-right: auto;
+    color: black;
+}
+
+.ketiga-topupin {
+    justify-content: center;
+    padding: 17px 0 0 0;
+}
+
+.ketiga-ikuti {
+    margin-left: auto;
+    padding: 17px 300px 0 0;
+
 } */
+
+.hakcipta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 50px 0 25px 0;
+}
+
+
+
+
+
+
 

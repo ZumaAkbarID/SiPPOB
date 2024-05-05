@@ -7,8 +7,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -19,7 +19,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -66,14 +66,14 @@ hr {
     flex-direction: column;
     text-align: center;
     text-transform: none;
-    
+
     /* opacity: 90%; */
 }
 
 .utama-back {
     display: flex;
     margin: 10px;
-    
+
 }
 .utama-back h1 {
     padding-top: 8px;
@@ -83,7 +83,7 @@ hr {
     border-radius: 10px;
     background-color: transparent;
     border: none;
-   
+
     padding-right: 20px;
 }
 
@@ -98,7 +98,7 @@ hr {
     font-size: 40px;
 }
 
- 
+
 
 input[type = text], input[type = email], input[type = password] {
     font-size: 15px;
@@ -140,22 +140,20 @@ input[type = text]:focus, input[type = email]:focus, input[type = password]:focu
     margin-top: 20px;
     /* justify-content: center; */
     /* display: flex; */
-    /* align-items: center; */
+    vertical-align: middle;
+    text-align: center;
+    align-items: center;
 }
 
 .utama-table tr {
     display: flex;
 }
 
-.utama-table {
-    vertical-align: middle;
-    text-align: center;
-}
-.utama-table .td1, 
+.utama-table .td1,
 .utama-table .td2 {
     width: 100%;
-    
-} 
+
+}
 
 /* .utama-table .td1, .utama-table .td2 {
     flex: 1;
@@ -170,12 +168,12 @@ input[type = text]:focus, input[type = email]:focus, input[type = password]:focu
 
 
 .google {
-    width: 10%;
+    width: 31%;
     max-width: 50px;
 }
 
 .facebook {
-    width: 10%;
+    width: 22%;
     max-width: 50px;
 }
 .utama-logo button{
@@ -195,8 +193,8 @@ input[type = text]:focus, input[type = email]:focus, input[type = password]:focu
     opacity: 1;
 }
 .utama-logo {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     margin: 10px;
     padding: 25px 0 20px 0;
 }
