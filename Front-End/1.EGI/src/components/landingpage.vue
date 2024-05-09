@@ -1,4 +1,8 @@
 <template>
+<navbar />
+<hero />
+
+
   <div class="landing">
     <div class="container">
       <h1 class="display-4 mb-4">Selamat Datang di TOP-UP IN!</h1> <!-- Tambahkan mb-4 untuk memberi jarak bawah -->
@@ -19,10 +23,16 @@
       </div>
     </div>
   </div>
+
+  <layout-footer />
 </template>
 
 <script>
+import hero from './hero.vue';
+
 export default {
+  components: { hero },
+
   data() {
     return {
       games: [
@@ -48,10 +58,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped> 
+
 .landing {
   padding: auto;
-  background-color: #7F27FF; /* Warna ungu */
+  background-color: rgb(30 32 34); /* Warna ungu */
   font-family: 'Poppins', sans-serif; /* Mengubah font menjadi Poppins */
 }
 
@@ -104,8 +115,8 @@ export default {
 }
 
 .btn-primary {
-  background-color: #9F70FD; /* Warna latar belakang yang sesuai */
-  border-color: #9F70FD; /* Warna tepi yang sesuai */
+  background-color: rgb(255, 202, 44); /* Warna latar belakang yang sesuai */
+  border-color: rgb(255, 202, 44); /* Warna tepi yang sesuai */
 }
 
 .btn-primary:hover {
