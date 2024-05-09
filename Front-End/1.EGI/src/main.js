@@ -1,11 +1,14 @@
-
-
 import { createApp } from 'vue'
+import router from './router/router'
 import App from './App.vue'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min.js'
+import Navbar from './components/partials/Navbar.vue'
+import LayoutFooter from './components/partials/Footer.vue'
 import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
 
-createApp(App).mount('#app')
+createApp(App)
+  .component('Navbar', Navbar)
+  .component('LayoutFooter', LayoutFooter)
+  .use(router)
+  .mount('#app')
