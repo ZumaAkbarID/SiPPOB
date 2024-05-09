@@ -2,7 +2,6 @@
   <div class="hero">
     <div class="carousel-container">
       <div class="carousel-control left" @click="prevSlide">
-      
       </div>
       <Carousel
         :items-to-show="1"
@@ -15,23 +14,11 @@
       >
         <Slide v-for="(slide, index) in slides" :key="index">
           <img :src="slide.imgSrc" alt="slide" class="carousel-img" />
-          <div class="carousel-caption">
-            <h3>{{ slide.title }}</h3>
-            <p>{{ slide.description }}</p>
-          </div>
+
         </Slide>
       </Carousel>
       <div class="carousel-control right" @click="nextSlide">
       </div>
-    </div>
-    <div class="carousel-indicators">
-      <span
-        v-for="(slide, index) in slides"
-        :key="index"
-        :class="{ active: index === currentSlide }"
-        class="carousel-indicator"
-        @click="goToSlide(index)"
-      ></span>
     </div>
   </div>
 </template>
@@ -51,18 +38,13 @@ export default {
       slides: [
         {
           imgSrc: 'public/img/ml.png',
-          title: 'Mobile Legends',
-          description: 'Experience the thrilling MOBA action on your mobile device!',
+
         },
         {
           imgSrc: 'public/img/ff.png',
-          title: 'Free Fire',
-          description: 'Survive and be the last one standing in this battle royale game.',
         },
         {
           imgSrc: 'public/img/pubg.png',
-          title: 'PUBG Mobile',
-          description: 'Join the ultimate battle royale experience on your smartphone.',
         },
       ],
     };
@@ -85,7 +67,7 @@ export default {
 <style scoped>
 .hero {
   padding: 20px 0;
-  background-color: #9F70FD;
+  background-color: rgb(30 32 34);
 }
 
 .carousel-container {
@@ -93,7 +75,6 @@ export default {
   margin: 0 auto;
   width: 90%; /* Lebar relatif untuk responsif */
 }
-
 .carousel-control {
   position: absolute;
   top: 1000%;
@@ -166,14 +147,23 @@ export default {
   transition: background-color 0.3s ease;
 }
 
-.carousel-indicator.active {
-  background-color: #7ffff;
-}
-
 /* Material Icons */
-.material-icons {
+.material-icons {  
   font-family: 'Material Icons', sans-serif;
   font-size: 36px;
   line-height: 1;
 }
+
+@media (max-width: 992px) { 
+  .card-img-top {
+    height: 150px; /* Atur tinggi gambar untuk layar berukuran kecil */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 10px; /* Atur margin bawah kartu untuk layar berukuran kecil */
+  }
+}
+
 </style>

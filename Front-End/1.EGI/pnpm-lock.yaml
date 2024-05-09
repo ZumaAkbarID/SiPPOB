@@ -20,6 +20,9 @@ importers:
       vue-awesome-swiper:
         specifier: ^5.0.1
         version: 5.0.1(swiper@11.1.1)(vue@3.4.26)
+      vue-router:
+        specifier: '4'
+        version: 4.3.2(vue@3.4.26)
       vue3-carousel:
         specifier: ^0.3.3
         version: 0.3.3(vue@3.4.26)
@@ -506,6 +509,9 @@ packages:
   '@vue/compiler-ssr@3.4.26':
     resolution: {integrity: sha512-FNwLfk7LlEPRY/g+nw2VqiDKcnDTVdCfBREekF8X74cPLiWHUX6oldktf/Vx28yh4STNy7t+/yuLoMBBF7YDiQ==}
 
+  '@vue/devtools-api@6.6.1':
+    resolution: {integrity: sha512-LgPscpE3Vs0x96PzSSB4IGVSZXZBZHpfxs+ZA1d+VEPwHdOXowy/Y2CsvCAIFrf+ssVU1pD1jidj505EpUnfbA==}
+
   '@vue/devtools-core@7.1.3':
     resolution: {integrity: sha512-pVbWi8pf2Z/fZPioYOIgu+cv9pQG55k4D8bL31ec+Wfe+pQR0ImFDu0OhHfch1Ra8uvLLrAZTF4IKeGAkmzD4A==}
 
@@ -909,6 +915,11 @@ packages:
     peerDependencies:
       swiper: ^7.0.0  || ^8.0.0
       vue: 3.x
+
+  vue-router@4.3.2:
+    resolution: {integrity: sha512-hKQJ1vDAZ5LVkKEnHhmm1f9pMiWIBNGF5AwU67PdH7TyXCj/a4hTccuUuYCAMgJK6rO/NVYtQIEN3yL8CECa7Q==}
+    peerDependencies:
+      vue: ^3.2.0
 
   vue3-carousel@0.3.3:
     resolution: {integrity: sha512-VsuOBE4LG9lxAiYGR9U7ps4RyJ4oFQGzk79/49ybvoxzNpahPAVWIDHKK3a1lOv0CSplFq6u4FvaFLZ8x3FgWg==}
@@ -1370,6 +1381,8 @@ snapshots:
       '@vue/compiler-dom': 3.4.26
       '@vue/shared': 3.4.26
 
+  '@vue/devtools-api@6.6.1': {}
+
   '@vue/devtools-core@7.1.3(vite@5.2.11)(vue@3.4.26)':
     dependencies:
       '@vue/devtools-kit': 7.1.3(vue@3.4.26)
@@ -1764,6 +1777,11 @@ snapshots:
   vue-awesome-swiper@5.0.1(swiper@11.1.1)(vue@3.4.26):
     dependencies:
       swiper: 11.1.1
+      vue: 3.4.26
+
+  vue-router@4.3.2(vue@3.4.26):
+    dependencies:
+      '@vue/devtools-api': 6.6.1
       vue: 3.4.26
 
   vue3-carousel@0.3.3(vue@3.4.26):
