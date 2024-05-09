@@ -3,9 +3,9 @@
 <template>
     <navbar />
 
-    <div class="login-container">
-        <form @submit.prevent="login" class="login-form">
-            <h2 class="form-title">Login</h2>
+    <div class="daftar-container">
+        <form @submit.prevent="daftar" class="daftar-form">
+            <h2 class="form-title">Daftar</h2>
             <div class="form-group">
                 <label for="username">Username</label>
                 <input
@@ -14,6 +14,17 @@
                     id="username"
                     class="form-control"
                     placeholder="Masukkan username"
+                    required
+                />
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    v-model="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="Masukkan email"
                     required
                 />
             </div>
@@ -29,42 +40,27 @@
                 />
             </div>
 
-            <button
-                type="submit"
-                class="btn btn-primary btn-block form-group"
-                style="margin-top: 5px"
-            >
-                Login
-            </button>
-
-            <div class="row form-group">
-                <div class="d-md-flex justify-content">
-                    <a
-                        class="btn btn-sm btn-block text-uppercase btn-outline"
-                        href="#"
-                    >
-                        <img style="width: 30px" src="/img/google.png" />
-
-                        Google
-                    </a>
-                    <a
-                        class="btn btn-sm btn-block text-uppercase btn-outline"
-                        href="#"
-                    >
-                        <img style="width: 37px" src="/img/discord.png" />
-                        Discord
-                    </a>
+            <div class="utama-cek">
+                <div class="col-12">
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="gridCheck"
+                            required
+                        />
+                        <label class="form-check-label" for="gridCheck">
+                            Dengan mendaftar saya menyetujui
+                            <a href="#">Aturan Penggunaan</a> dan
+                            <a href="#">Kebijakan Privasi </a>TOP-UP IN
+                        </label>
+                    </div>
                 </div>
             </div>
 
-            <div>
-                <p class="text-center">
-                    Belum memiliki akun?
-                    <RouterLink :to="{ name: 'Daftar' }" aria-current="page"
-                        >Daftar</RouterLink
-                    >
-                </p>
-            </div>
+            <button type="submit" class="btn btn-primary btn-block space">
+                Daftar
+            </button>
         </form>
     </div>
 
@@ -72,8 +68,8 @@
 </template>
 
 <style scoped>
-/* Login container */
-.login-container {
+/* daftar container */
+.daftar-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,8 +77,8 @@
     background: linear-gradient(45deg, #ff6b6b, #5563de);
 }
 
-/* Customizing the login form */
-.login-form {
+/* Customizing the daftar form */
+.daftar-form {
     width: 430px;
     padding: 20px;
     background-color: #f9f9f9;
@@ -130,5 +126,14 @@
 /* Making button full width */
 .btn-block {
     width: 100%;
+}
+
+/* Making custom for checking box */
+.utama-cek {
+    font-size: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
 }
 </style>
