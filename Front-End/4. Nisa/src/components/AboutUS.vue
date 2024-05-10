@@ -11,10 +11,10 @@
   <div class="about-us-info">
     <h2>Visi & Misi</h2>
     <h3>Visi</h3>
-    <p>Menjadi layanan top-up game terkemuka dan terpercaya bagi pemain game di seluruh Indonesia.</p>
+    <p font-family: Poppins>Menjadi layanan top-up game terkemuka dan terpercaya bagi pemain game di seluruh Indonesia.</p>
 
     <h3>Misi</h3>
-    <p>Memberikan layanan top-up game yang cepat, mudah, dan aman bagi pemain game di Indonesia dengan layanan pelanggan yang responsif dan memuaskan</p>
+    <p font-family: Poppins>Memberikan layanan top-up game yang cepat, mudah, dan aman bagi pemain game di Indonesia dengan layanan pelanggan yang responsif dan memuaskan</p>
     <a href="#" title="About Us Button">VISI MISI</a>
   </div>
 </div>
@@ -26,7 +26,7 @@
 
   <div class="history-info">
     <h2>Sejarah Perusahaan</h2>
-    <p>Pada tahun 2020, dunia mengalami pandemi Covid-19 yang mengharuskan masyarakat mengurangi kegiatan di luar rumah dan menghabiskan waktu lebih banyak di rumah. 
+    <p font-family: Poppins>Pada tahun 2020, dunia mengalami pandemi Covid-19 yang mengharuskan masyarakat mengurangi kegiatan di luar rumah dan menghabiskan waktu lebih banyak di rumah. 
         Tak sedikit yang merasa kaget dengan pandemi yang terjadi secara mendadak, beberapa dari mereka memutuskan untuk menghabiskan waktu dan melepas stress dengan bermain game.
         Kami hadir untuk melengkapi pengalaman bermain yang lebih lengkap dengan top-up game melalui perusahaan kami. Besar harapan kami untuk dapat terus bersaing dengan sehat kedepannya.
     </p>
@@ -42,12 +42,12 @@
 
 <style scoped>
     h1,
-h2,
-h3,
+h2 {font-family: "Poppins"},
+h3 {font-family: "Poppins"},
 h4,
 h5,
 h6 {
-  font-family: "Bebas Neue", cursive;
+  font-family: "Poppins", cursive;
 }
 
 a {
