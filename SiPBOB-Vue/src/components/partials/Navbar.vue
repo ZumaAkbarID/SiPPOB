@@ -39,22 +39,44 @@
             >Cek Transaksi</RouterLink
           >
 
-          <a class="nav-item nav-link" href="#">Tim</a>
-          <a class="nav-item nav-link" href="#">Tentang Kami</a>
-          <a class="nav-item nav-link" href="#">Kontak</a>
+          <RouterLink
+            :to="{ name: 'tim' }"
+            class="nav-item nav-link"
+            aria-current="page"
+            >Tim</RouterLink
+          >
+
+          <RouterLink
+            :to="{ name: 'tentangKami' }"
+            class="nav-item nav-link"
+            aria-current="page"
+            >Tentang Kami</RouterLink
+          >
+
+          <RouterLink
+            :to="{ name: 'kontak' }"
+            class="nav-item nav-link"
+            aria-current="page"
+            >Kontak</RouterLink
+          >
         </div>
         <!-- Right navigation -->
         <div class="navbar-nav ms-lg-4">
-          <a class="nav-item nav-link nav-login" href="#">Masuk</a>
+          <RouterLink
+            :to="{ name: 'masuk' }"
+            class="nav-item nav-link nav-login"
+            aria-current="page"
+            >Masuk</RouterLink
+          >
         </div>
         <!-- Action -->
         <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
-          <a
-            href="#"
+          <RouterLink
+            :to="{ name: 'daftar' }"
             class="btn btn-sm btn-warning nav-register w-full w-lg-auto px-3"
+            aria-current="page"
+            >Daftar</RouterLink
           >
-            Daftar
-          </a>
         </div>
       </div>
     </div>
