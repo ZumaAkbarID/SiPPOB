@@ -34,13 +34,13 @@ export default {
       currentSlide: 0,
       slides: [
         {
-          imgSrc: "/assets/img/ml.png",
+          imgSrc: "/assets/img/slide1.png",
         },
         {
-          imgSrc: "/assets/img/ff.png",
+          imgSrc: "/assets/img/slide2.png",
         },
         {
-          imgSrc: "/assets/img/pubg.png",
+          imgSrc: "/assets/img/slide2.png",
         },
       ],
     };
