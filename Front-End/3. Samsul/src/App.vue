@@ -1,14 +1,10 @@
 <script setup>
 
-import Profile from './components/Profile.vue'
 
 </script>
 
 <template>
- <main>
-  <Profile/>
-
- </main>
+<RouterView/>
 </template>
 
 <style scoped>
