@@ -37,14 +37,14 @@ export default {
       currentSlide: 0,
       slides: [
         {
-          imgSrc: 'public/img/ml.png',
+          imgSrc: 'src/assets/img/slide1.png',
 
         },
         {
-          imgSrc: 'public/img/ff.png',
+          imgSrc: 'src/assets/img/slide2.png',
         },
         {
-          imgSrc: 'public/img/pubg.png',
+          imgSrc: 'src/assets/img/slide3.png',
         },
       ],
     };
