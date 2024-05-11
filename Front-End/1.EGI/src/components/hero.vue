@@ -44,7 +44,7 @@ export default {
           imgSrc: 'src/assets/img/slide2.png',
         },
         {
-          imgSrc: 'src/assets/img/slide3.png',
+          imgSrc: 'src/assets/img/slide3-2.png',
         },
       ],
     };
