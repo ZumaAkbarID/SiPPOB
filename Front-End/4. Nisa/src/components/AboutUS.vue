@@ -47,7 +47,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Bebas Neue", cursive;
+  font-family: "Poppins", cursive;
 }
 
 a {
@@ -82,7 +82,7 @@ a:hover {
 }
 
 #about-us-section {
-  background: #0c4c91;
+  background: #9F70FD;
   width: 100%;
   height: 50%;
   display: flex;
@@ -139,6 +139,7 @@ a:hover {
   margin-right: 850px;
   margin-left: 12px;
   z-index: 2;
+  font-family: 'Poppins';
 }
 
 @media screen and (max-width: 1353px) {
@@ -189,6 +190,7 @@ a:hover {
   color: white;
   font-size: 40pt;
   text-align: right;
+  font-family: 'Poppins';
 }
 
 @media screen and (max-width: 860px) {
@@ -200,12 +202,14 @@ a:hover {
 .about-us-info h3{
     color: yellow;
     text-align: left;
+    font-family: 'Poppins';
 }
 
 .about-us-info p {
   color: white;
   font-size: 14pt;
   text-align: right;
+  font-family: 'Poppins';
 }
 
 @media screen and (max-width: 860px) {
@@ -221,6 +225,7 @@ a:hover {
   text-align: center;
   padding: 15px 0px 15px 0px;
   font-size: 14pt;
+  font-family: 'Poppins';
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
@@ -289,6 +294,7 @@ a:hover {
   margin-left: 850px;
   margin-right: 12px;
   z-index: 2;
+  font-family: 'Poppins';
 }
 
 @media screen and (max-width: 1353px) {
@@ -336,9 +342,10 @@ a:hover {
 }
 
 .history-info h2 {
-  color: #0c4c91;
+  color: #9F70FD;
   font-size: 40pt;
   text-align: left;
+  font-family: 'Poppins';
 }
 
 @media screen and (max-width: 860px) {
@@ -348,9 +355,10 @@ a:hover {
 }
 
 .history-info p {
-  color: #0c4c91;
+  color: #9F70FD;
   font-size: 14pt;
   text-align: left;
+  font-family: 'Poppins';
 }
 
 @media screen and (max-width: 860px) {
@@ -360,13 +368,14 @@ a:hover {
 }
 
 .history-info a {
-  background-color: #0c4c91;
+  background-color: #7F27FF;
   color: white;
   width: 180px;
   text-align: center;
   padding: 15px 0px 15px 0px;
   font-size: 14pt;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  font-family: 'Poppins';
 }
 
 .history-info a:hover {
