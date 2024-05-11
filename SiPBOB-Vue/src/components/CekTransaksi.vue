@@ -1,102 +1,108 @@
 <template>
-  <navbar />
+  <div>
+    <navbar />
 
-  <div id="form-search" class="text-white py-5">
-    <ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <div class="container">
-      <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12">
-        <h1 class="fw-bold">Cari pesanan kamu!</h1>
-        <p>
-          Lacak transaksi kamu dengan cara memasukkan Nomor Invoice dibawah ini:
-        </p>
+    <div id="form-search" class="text-white py-5">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="container">
+        <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12">
+          <h1 class="fw-bold">Cari pesanan kamu!</h1>
+          <p>
+            Lacak transaksi kamu dengan cara memasukkan Nomor Invoice dibawah
+            ini:
+          </p>
 
-        <form action="">
-          <div class="form-group">
-            <label for="invoice">Nomor Invoice Kamu</label>
-            <input
-              type="text"
-              name="invoice"
-              id="invoice"
-              class="form-control"
-              placeholder="Inv-0xxxxx"
-            />
-          </div>
-          <button type="button" class="btn btn-warning mt-2 text-white fw-bold">
-            <i class="fa-solid fa-magnifying-glass"></i> Cek Transaksi
-          </button>
-        </form>
+          <form action="">
+            <div class="form-group">
+              <label for="invoice">Nomor Invoice Kamu</label>
+              <input
+                type="text"
+                name="invoice"
+                id="invoice"
+                class="form-control"
+                placeholder="Inv-0xxxxx"
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-warning mt-2 text-white fw-bold"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i> Cek Transaksi
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="realtime-history" class="bg-dark pt-5">
-    <div class="container text-white">
-      <h4>Transaksi Real-time</h4>
-      <p>Berikut ini real-time data pesanan masuk terbaru</p>
+    <div id="realtime-history" class="bg-dark pt-5">
+      <div class="container text-white">
+        <h4>Transaksi Real-time</h4>
+        <p>Berikut ini real-time data pesanan masuk terbaru</p>
 
-      <div class="table-responsive">
-        <table class="table table-striped table-dark">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+      <svg
+        width="100%"
+        height="100%"
+        id="svg"
+        viewBox="0 0 1440 390"
+        xmlns="http://www.w3.org/2000/svg"
+        class="-mt-8 transition delay-150 duration-300 ease-in-out print:hidden md:-mt-24"
+      >
+        <path
+          d="M 0,400 C 0,400 0,200 0,200 C 40.34909359970402,243.0042668639783 80.69818719940804,286.0085337279566 135,268 C 189.30181280059196,249.9914662720434 257.5563448020718,170.97013195215192 311,159 C 364.4436551979282,147.02986804784808 403.07643359230485,202.11093846343573 452,207 C 500.92356640769515,211.88906153656427 560.137920828709,166.58611419410528 626,169 C 691.862079171291,171.41388580589472 764.3718830928599,221.54460476014305 826,248 C 887.6281169071401,274.45539523985695 938.3745467998519,277.2354667653225 985,246 C 1031.625453200148,214.7645332346775 1074.1299297077323,149.51352817856701 1122,137 C 1169.8700702922677,124.48647182143299 1223.1057343692194,164.71042052040943 1277,184 C 1330.8942656307806,203.28957947959057 1385.4471328153904,201.64478973979527 1440,200 C 1440,200 1440,400 1440,400 Z"
+          stroke="none"
+          stroke-width="0"
+          fill="#34373b"
+          fill-opacity="1"
+          class="path-0 transition-all delay-150 duration-300 ease-in-out"
+        ></path>
+      </svg>
     </div>
-    <svg
-      width="100%"
-      height="100%"
-      id="svg"
-      viewBox="0 0 1440 390"
-      xmlns="http://www.w3.org/2000/svg"
-      class="-mt-8 transition delay-150 duration-300 ease-in-out print:hidden md:-mt-24"
-    >
-      <path
-        d="M 0,400 C 0,400 0,200 0,200 C 40.34909359970402,243.0042668639783 80.69818719940804,286.0085337279566 135,268 C 189.30181280059196,249.9914662720434 257.5563448020718,170.97013195215192 311,159 C 364.4436551979282,147.02986804784808 403.07643359230485,202.11093846343573 452,207 C 500.92356640769515,211.88906153656427 560.137920828709,166.58611419410528 626,169 C 691.862079171291,171.41388580589472 764.3718830928599,221.54460476014305 826,248 C 887.6281169071401,274.45539523985695 938.3745467998519,277.2354667653225 985,246 C 1031.625453200148,214.7645332346775 1074.1299297077323,149.51352817856701 1122,137 C 1169.8700702922677,124.48647182143299 1223.1057343692194,164.71042052040943 1277,184 C 1330.8942656307806,203.28957947959057 1385.4471328153904,201.64478973979527 1440,200 C 1440,200 1440,400 1440,400 Z"
-        stroke="none"
-        stroke-width="0"
-        fill="#34373b"
-        fill-opacity="1"
-        class="path-0 transition-all delay-150 duration-300 ease-in-out"
-      ></path>
-    </svg>
-  </div>
 
-  <layout-footer />
+    <layout-footer />
+  </div>
 </template>
 
 

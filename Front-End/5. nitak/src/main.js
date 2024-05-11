@@ -1,5 +1,11 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from "vue";
+import router from "./router";
+import App from "./App.vue";
+import Navbar from "./components/partials/Navbar.vue";
+import LayoutFooter from "./components/partials/Footer.vue";
 
-createApp(App).mount('#app')
+createApp(App)
+    .component("Navbar", Navbar)
+    .component("LayoutFooter", LayoutFooter)
+    .use(router)
+    .mount("#app");
