@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col-12 lima">
-                    <p>ini namanya timer ya</p>
+                    <p></p>
                 </div>
 
                 <div class="col-2 tujuh">
@@ -31,7 +31,7 @@
                 <div class="col-10 enam">
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button class="btn invoice" type="button">
-                            <!-- <img src="/src/assets/img/icon_printer.png" class="btn-printer"> -->
+                            <img src="/src/assets/img/icon_printer.png" class="btn-printer">
                             Unduh Invoice
                         </button>
                     </div>
@@ -62,7 +62,12 @@
                 <div class="container">
                     <div class="row kanan-satu">
                         <div class="col invoice">Nomor Invoice</div>                      
-                        <div class="col code"><button class="btn copy-1">Codexxxxxxx</button></div>                       
+                        <div class="col code">
+                            <button class="btn copy-1">
+                                Codexxxxxxx
+                                <img src="/src/assets/img/icon_clipboard.png" class="icon clipboard-white">
+                            </button>
+                        </div>                       
                     </div>
                     
                     <div class="row kanan-dua">
@@ -117,20 +122,22 @@
                                         <div class="col biaya-angka">Rp 5x</div>
                                     </div>
                                 </div>
-                                <!-- <span class="span harga">Harga</span>
-                                <span class="span harga">Jumlah</span>
-                                <hr>
-                                <span class="span harga">Subtotal</span>
-                                <span class="span harga">Biaya</span> -->
                             </div>
                         </div>
                     </div>
                     <div class="row total">
                         <div class="col"><h2 class="h2 total">Total Pembayaran</h2></div>
-                        <div class="col copy-1"><button class="btn copy-2">Rp 1.xxx</button></div>
+                        <div class="col copy-1">
+                            <button class="btn copy-2">
+                                Rp 1.xxx
+                                <img src="/src/assets/img/icon_clipboard.png" class="icon clipboard">
+                            </button>
+                        </div>
                    </div>
                     <div class="row">
-                        <div class="col"><p class="pesan reminder">Masukkan <b>nomor OVO</b> anda pada tombol orange di bawah, lalu buka aplikasi OVO dan cari pembayaran <b>TOP-UP IN</b> di notifikasi</p></div>
+                        <div class="col">
+                            <p class="pesan reminder">Masukkan <b>nomor OVO</b> anda pada tombol orange di bawah, lalu buka aplikasi OVO dan cari pembayaran <b>TOP-UP IN</b> di notifikasi</p>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col proges"><h5 class="h5 proges">Progess Transaksi</h5></div>
@@ -138,8 +145,8 @@
                         <div class="timeline">                            
                                 <ul class="timeline-with-icons">
                                     <li class="timeline-item mb-5">
-                                        <span class="timeline-icon">
-                                            centang
+                                        <span class="timeline-icon satu">                                   
+                                            <img src="/src/assets/img/icon_check.png" class="icon check">
                                         </span>
                                         <h5 class="h5 transaksi">
                                             Transaksi Dibuat
@@ -150,7 +157,7 @@
                                     </li>
 
                                     <li class="timeline-item mb-5">
-                                        <span class="timeline-icon">
+                                        <span class="timeline-icon dua">
                                             titik
                                         </span>
                                         <h5 class="h5 pembayaran">
@@ -162,7 +169,7 @@
                                     </li>
 
                                     <li class="timeline-item mb-5">
-                                        <span class="timeline-icon">
+                                        <span class="timeline-icon tiga">
                                             kosong
                                         </span>
                                         <h5 class="h5 selesai">
@@ -180,7 +187,10 @@
             </div>
 
             <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 empat">
-                <button class="btn bayar">Masukkan nomor OVO terdaftar kamu</button>
+                <button class="btn bayar">
+                    Masukkan nomor OVO terdaftar kamu 
+                    <img src="/src/assets/img/icon_shared_boxed.png" class="icon shared-boxed">
+                </button>
             </div>
         </div>
         <hr>
@@ -259,6 +269,7 @@ export default {
     background-color: #F43F5E;
 }
 .btn.invoice{
+    
     color: white;
     background-color: #F96E1C;
 }
@@ -267,14 +278,15 @@ export default {
     background-color: #FB923C;
 }
 
-/* .btn-printer{
+.btn-printer{
     width: 18px;
     align-items: center;
-    color: white;
-} */
+    margin: 0 5px 4px 0;
+}
 
 .hr-atas{
     background-color: #4A5157;
+    margin-bottom: 30px;
 }
 
 
@@ -346,6 +358,12 @@ export default {
     background-color: #3D4348;
 }
 
+.icon.clipboard-white {
+    width: 18px;
+    align-items: center;
+    margin: 0 0 4px 5px;
+}
+
 .span.pending {
     background-color: #FDE047;
     color: #854D0E;
@@ -391,16 +409,22 @@ export default {
 .btn.copy-2{
     font-size: 20px;
     font-weight: bold;
-    margin-left: 180px;
+    margin-left: 150px;
     margin-bottom: 40px;
     color: #F97316;
     background-color: #4A5157;
+    border: 1px solid;
 }
 
 .btn.copy-2:hover {
     background-color: #3D4348;
 }
 
+.icon.clipboard {
+    width: 18px;
+    align-items: center;
+    margin: 0 0 4px 5px;
+}
 .row.total {
     margin-top: 25px;
 }
@@ -415,6 +439,12 @@ export default {
     font-size: 20px;
     padding: 20px;
     margin-bottom: 20px;
+}
+
+.icon.shared-boxed {
+    margin: 0 0 4px 5px;
+    width: 18px;
+    align-items: center;
 }
 
 .col.proges {
@@ -456,6 +486,25 @@ export default {
   justify-content: center;
 }
 
+.timeline-icon.satu {
+    background-color: #22C55E;
+    color: white;
+}
+
+.timeline-icon.satu:hover {
+    background-color: #16A34A;
+}
+
+.timeline-icon.dua {
+    background-color: #F97316;
+    color: white;
+}
+
+.timeline-icon.tiga {
+    background-color: transparent;
+    color: white;
+    border: 1px solid;
+}
 .h5.transaksi {
     color: #22B83B;
 }
@@ -464,6 +513,11 @@ export default {
     color: #C3C9CC;
 }
 
+.icon.check{
+    width: 18px;
+    align-items: center;
+    margin: 0;
+}
 .h5.pembayaran {
     color: #F97316;
 }

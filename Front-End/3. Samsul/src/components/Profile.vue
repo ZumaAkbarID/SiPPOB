@@ -125,10 +125,14 @@
     </div>
 
     <!-- TABEL -->
-    <h2>Riwayat Transaksi</h2>
     <div class="tabel">
+    <!-- <h2>Riwayat Transaksi</h2> -->
+
       <table class="table table-dark table-borderless">
             <thead>
+              <tr>
+                <th colspan="7" class="table-active" >Riwayat Transaksi</th>
+              </tr>
               <tr>
                 <th scope="col">Nomor Invoice</th>
                 <th scope="col">ID Trx</th>
@@ -277,8 +281,6 @@
     color: black;
     padding-top: 45px;
     color: white;
-    /* margin-top: 50px; */
-    justify-content: center;
     text-align: center;
   }
 
@@ -382,26 +384,31 @@
     background-color: #FB7185;
   }
   .dashboard-label {
-    font-size: 16px;
+    font-size: 19px;
     color: black;
     padding-bottom: 15px;
     color: white;
   }
   
   .dashboard-value {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     padding-top: 22px;
     color: white;
   }
 
   /* Tabel */
-h2 {
+/* h2 {
     margin-left: 607px;
     color: white;
-}
+} */
 
+.table-active{
+  text-align: center;
+  font-size: 22px;
+}
 .tabel {
+  margin: auto auto;
   justify-content: center;
   display: flex;
   margin-bottom: 50px;
