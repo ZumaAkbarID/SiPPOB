@@ -36,15 +36,15 @@ export default {
   data() {
     return {
       games: [
-        { id: 1, name: 'Mobile Legends', image: 'public/img/ml.png' },
-        { id: 2, name: 'Free Fire', image: 'public/img/ff.png' },
-        { id: 3, name: 'PUBG Mobile', image: 'public/img/pubg.png' },
-        { id: 4, name: 'Call of Duty: Mobile', image: 'public/img/cod.png' },
-        { id: 5, name: 'Arena of Valor', image: 'public/img/aov.png' },
-        { id: 6, name: 'League of Legends', image: 'public/img/lol.png' },
-        { id: 7, name: 'Honor of Kings', image: 'public/img/hok.png' },
-        { id: 8, name: 'Pokemon Unite', image: 'public/img/pu.png' },
-        { id: 9, name: 'Farlight 84', image:  'public/img/f8.png'}
+        { id: 1, name: 'Mobile Legends', image: 'src/assets/img/ml.png' },
+        { id: 2, name: 'Free Fire', image: 'src/assets/img/ff.png' },
+        { id: 3, name: 'PUBG Mobile', image: 'src/assets/img/pubg.png' },
+        { id: 4, name: 'Call of Duty: Mobile', image: 'src/assets/img/cod.png' },
+        { id: 5, name: 'Arena of Valor', image: 'src/assets/img/aov.png' },
+        { id: 6, name: 'League of Legends', image: 'src/assets/img/lol.png' },
+        { id: 7, name: 'Honor of Kings', image: 'src/assets/img/hok.png' },
+        { id: 8, name: 'Pokemon Unite', image: 'src/assets/img/pu.png' },
+        { id: 9, name: 'Farlight 84', image:  'src/assets/img/f8.png'}
         // Tambahkan game lain sesuai kebutuhan Anda
       ]
     };
