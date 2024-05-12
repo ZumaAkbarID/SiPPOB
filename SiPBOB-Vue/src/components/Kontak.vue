@@ -3,27 +3,74 @@
 <template>
     <navbar />
     <div class="container">
-        <div class="contact-form">
-            <h2>Contact Us</h2>
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required />
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required />
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Send Message" />
-                </div>
-            </form>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Kontak Kami</h2>
+                <p>
+                    Jika Anda memiliki pertanyaan atau masalah, jangan ragu
+                    untuk menghubungi kami melalui formulir di bawah ini.
+                </p>
+                <form action="#" method="post">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="nama"
+                            required
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            required
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label for="pesan" class="form-label">Pesan</label>
+                        <textarea
+                            class="form-control"
+                            id="pesan"
+                            rows="5"
+                            required
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Kirim Pesan
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2>Informasi Kontak</h2>
+                <p>
+                    Jl. Jenderal Sudirman No. 123<br />
+                    Jakarta, Indonesia
+                </p>
+                <p>
+                    Email: info@bangjeff.com<br />
+                    Telepon: 123-456-789
+                </p>
+                <p>Ikuti kami di media sosial:</p>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="bi bi-twitter"></i> Twitter</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            ><i class="bi bi-instagram"></i> Instagram</a
+                        >
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+
     <layout-footer />
 </template>
 
