@@ -114,8 +114,14 @@ export default {};
 #form-search {
   position: relative;
   z-index: 1;
-  background: #4e54c8;
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  background-image: linear-gradient(
+    to right bottom,
+    #34373b,
+    #3a3d41,
+    #404347,
+    #474a4d,
+    #4d5053
+  );
 }
 
 #realtime-history {

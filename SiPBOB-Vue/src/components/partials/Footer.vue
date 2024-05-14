@@ -3,10 +3,7 @@
     <div class="container">
       <div class="row text-white">
         <div class="col-lg-4 col-md-12 col-sm-12">
-          <img
-            src="https://www.bangjeff.com/_next/image?url=https%3A%2F%2Fcdn.bangjeff.com%2Fc4f03f88-6fe5-4173-bcb6-bf92c5e6028e.png&w=64&q=75"
-            alt=""
-          />
+          <img src="/assets/topupin-logo.png" width="150" alt="" />
           <p>
             No #1 supplier top up game & voucher terlaris, murah, aman legal
             100% buka 24 Jam dengan payment terlengkap Indonesia
@@ -15,44 +12,47 @@
         <div class="col-lg-3 col-md-4 col-sm-6 col-6">
           <h5 class="text-warning mb-4">Peta Situs</h5>
           <ul class="list-unstyled">
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
+            <li class="mb-2">Beranda</li>
+            <li class="mb-2">Masuk</li>
+            <li class="mb-2">Daftar</li>
+            <li class="mb-2">Cek Transaksi</li>
+            <li class="mb-2">Kontak Kami</li>
           </ul>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6 col-6">
           <h5 class="text-warning mb-4">Dukungan</h5>
           <ul class="list-unstyled">
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
+            <li class="mb-2">WhatsApp</li>
+            <li class="mb-2">Telegram</li>
+            <li class="mb-2">Discord</li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-6">
           <h5 class="text-warning mb-4">Legalitas</h5>
           <ul class="list-unstyled">
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
-            <li class="mb-2">test</li>
+            <li class="mb-2">Kebijakan Pribadi</li>
+            <li class="mb-2">Syarat & Ketentuan</li>
           </ul>
         </div>
       </div>
     </div>
 
     <div class="container mt-4">
-      <p class="text-secondary">© 2024 CV namaproject. All rights reserved.</p>
+      <p class="text-secondary">
+        © 2024 CV {{ app_name }}. All rights reserved.
+      </p>
     </div>
   </footer>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      app_name: import.meta.env.VITE_APP_NAME,
+    };
+  },
+};
 </script>
 
 <style scoped>
