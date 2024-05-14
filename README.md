@@ -1,66 +1,139 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<img src="https://i.ibb.co/K7FCmQ2/github-header-image.png" alt="XIXIXI">
+
+<h1 align="center" style="font-weight: bold;">TopUp.in 💻</h1>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="#tech">Technologies</a>
+<a href="#started">Getting Started</a>
+<a href="#colab">Collaborators</a>
+<a href="#contribute">Contribute</a> 
 </p>
 
-## About Laravel
+<p align="center">Website top up game like PPOB service</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+<a href="https://topupin.beliaplikasi.shop/">📱 Visit this Project</a>
+</p>
+ 
+<h2 id="layout">🎨 Layout</h2>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p align="center">
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<img src="https://i.ibb.co/7tt6p0q/image.png" alt="Landing Page (DEVELOPMENT)" width="400px">
+</p>
+ 
+<h2 id="technologies">💻 Technologies</h2>
 
-## Learning Laravel
+- Vue
+- Vite
+- Swipper
+- Bootstrap
+- Fontawesome
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<h2 id="started">🚀 Getting started</h2>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Before run this project make sure you have installed all the prerequisites
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<h3>Prerequisites</h3>
 
-## Laravel Sponsors
+Here you list all prerequisites necessary for running the project :
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- NodeJS / BUN Runtime
+- PNPM
 
-### Premium Partners
+<h3>Cloning</h3>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+How to clone the project
 
-## Contributing
+```bash
+git clone https://github.com/ZumaAkbarID/SiPPOB SiPPOB
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<h3>Starting</h3>
 
-## Code of Conduct
+How to start the project (Currently FrontEnd Only)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+cd SiPPOB/SiPPOB-Vue
+pnpm install
+pnpm run dev (or) pnpm run build
+```
 
-## Security Vulnerabilities
+<h2 id="colab">🤝 Collaborators</h2>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<p>Special thank you for all people that contributed for this project.</p>
+<table>
+<tr>
 
-## License
+<td align="center">
+<a href="https://github.com/ZumaAkbarID">
+<img src="https://avatars.githubusercontent.com/u/56182034?v=4" width="100px;" alt=" Profile Picture"/><br>
+<sub>
+<b></b>
+</sub>
+</a>
+</td>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<td align="center">
+<a href="https://github.com/praditus343">
+<img src="https://avatars.githubusercontent.com/u/88468631?v=4" width="100px;" alt=" Profile Picture"/><br>
+<sub>
+<b></b>
+</sub>
+</a>
+</td>
+
+<td align="center">
+<a href="https://github.com/Syamsoelll">
+<img src="https://avatars.githubusercontent.com/u/105258350?v=4" width="100px;" alt=" Profile Picture"/><br>
+<sub>
+<b></b>
+</sub>
+</a>
+</td>
+
+<td align="center">
+<a href="https://github.com/dicorzki">
+<img src="https://avatars.githubusercontent.com/u/49770021?v=4" width="100px;" alt=" Profile Picture"/><br>
+<sub>
+<b></b>
+</sub>
+</a>
+</td>
+
+<td align="center">
+<a href="https://github.com/RachmasariAR">
+<img src="https://avatars.githubusercontent.com/u/119955525?v=4" width="100px;" alt=" Profile Picture"/><br>
+<sub>
+<b></b>
+</sub>
+</a>
+</td>
+
+<td align="center">
+<a href="https://github.com/DennitaNF">
+<img src="https://avatars.githubusercontent.com/u/162461813?v=4" width="100px;" alt=" Profile Picture"/><br>
+<sub>
+<b></b>
+</sub>
+</a>
+</td>
+
+</tr>
+</table>
+ 
+<h2 id="contribute">📫 Contribute</h2>
+
+Here how you can contribute to this project.
+
+1. Fork this repository
+1. `git clone https://github.com/<your username>/<your cloned repo>.git`
+1. `git checkout -b feature/NAME`
+1. Follow commit patterns
+1. Open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
+
+<h3>Documentations that might help</h3>
+
+[📝 How to create a Pull Request](https://www.atlassian.com/br/git/tutorials/making-a-pull-request)
+
+[💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
