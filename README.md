@@ -1,4 +1,4 @@
-<img src="https://i.ibb.co/K7FCmQ2/github-header-image.png" alt="XIXIXI">
+<img src="https://i.ibb.co/K7FCmQ2/github-header-image.png" align="center" alt="XIXIXI">
 
 <h1 align="center" style="font-weight: bold;">TopUp.in 💻</h1>
 
