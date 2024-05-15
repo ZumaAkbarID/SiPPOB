@@ -29,6 +29,14 @@ const routes = [
     }
   },
   {
+    path: '/example',
+    component: () => import('#components/DetailProduct.vue'),
+    name: 'detailProduk',
+    meta: {
+      title: 'Valorant | ' + AppName
+    }
+  },
+  {
     path: '/dashboard',
     component: () => import('#components/Dashboard.vue'),
     name: 'dashboard',

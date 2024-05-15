@@ -64,7 +64,7 @@ export default {
   methods: {
     redirectToTopUp(gameId) {
       // Ganti URL ini dengan URL yang sesuai untuk halaman top-up game
-      this.$router.push({ path: `/topup/${gameId}` });
+      this.$router.push({ path: `/example` });
     },
   },
 };

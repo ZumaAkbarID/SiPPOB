@@ -62,7 +62,7 @@
             :to="{ name: 'masuk' }"
             class="nav-item anim-border-bottom nav-link nav-login"
             aria-current="page"
-            >Masuk</RouterLink
+            ><i class="fa-solid fa-arrow-right-to-bracket"></i> Masuk</RouterLink
           >
         </div>
         <!-- Action -->
@@ -71,7 +71,7 @@
             :to="{ name: 'daftar' }"
             class="btn btn-sm btn-warning nav-register w-full w-lg-auto px-3"
             aria-current="page"
-            >Daftar</RouterLink
+            ><i class="fa-solid fa-user"></i> Daftar</RouterLink
           >
         </div>
       </div>

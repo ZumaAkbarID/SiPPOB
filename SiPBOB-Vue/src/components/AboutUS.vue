@@ -5,7 +5,7 @@
   <div class="we-are-block">
 <div id="about-us-section">
   <div class="about-us-image">
-    <img src="https://digitalupgrade.com/images/lobbyimage_1.jpg" width="808" height="458" alt="Lobby Image">
+    <img src="https://th.bing.com/th/id/R.4ba6711ced142e3228125a8f17f41c4d?rik=Q3PaZ02mBpV72Q&riu=http%3a%2f%2fppm.amikom.ac.id%2fresource%2fassets%2fimages%2fLogo_Amikom_color.png&ehk=V7cYZMsJXDDxRfAaCfG8%2bTQ5xLmXYvheMIDCb0EL5kI%3d&risl=&pid=ImgRaw&r=0" width="808" height="" alt="Lobby Image">
   </div>
 
   <div class="about-us-info">
@@ -15,13 +15,13 @@
 
     <h3>Misi</h3>
     <p>Memberikan layanan top-up game yang cepat, mudah, dan aman bagi pemain game di Indonesia dengan layanan pelanggan yang responsif dan memuaskan</p>
-    <a href="#" title="About Us Button">VISI MISI</a>
+    <a href="/" title="to Beranda">BERANDA</a>
   </div>
 </div>
 
 <div id="history-section">
   <div class="history-image">
-    <img src="https://digitalupgrade.com/images/building_pic.jpg" width="951" height="471" alt="Building Pic">
+    <img src="/assets/topupin-logo.png" width="808" height="" alt="Building Pic">
   </div>
 
   <div class="history-info">
@@ -31,7 +31,7 @@
         Kami hadir untuk melengkapi pengalaman bermain yang lebih lengkap dengan top-up game melalui perusahaan kami. Besar harapan kami untuk dapat terus bersaing dengan sehat kedepannya.
     </p>
 
-    <a href="#" title="History Button">SEJARAH</a>
+    <a href="/kontak" title="to contact">KONTAK</a>
   </div>
 </div>
 
@@ -82,7 +82,7 @@ a:hover {
 }
 
 #about-us-section {
-  background: #9F70FD;
+  background: #FDBF60;
   width: 100%;
   height: 50%;
   display: flex;
@@ -187,7 +187,7 @@ a:hover {
 }
 
 .about-us-info h2 {
-  color: white;
+  color: black;
   font-size: 40pt;
   text-align: right;
   font-family: 'Poppins';
@@ -200,13 +200,13 @@ a:hover {
 }
 
 .about-us-info h3{
-    color: yellow;
+    color: white;
     text-align: left;
     font-family: 'Poppins';
 }
 
 .about-us-info p {
-  color: white;
+  color: black;
   font-size: 14pt;
   text-align: right;
   font-family: 'Poppins';
@@ -219,8 +219,8 @@ a:hover {
 }
 
 .about-us-info a {
-  background-color: white;
-  color: #0c4c91;
+  background-color: #404140;
+  color: white;
   width: 180px;
   text-align: center;
   padding: 15px 0px 15px 0px;
@@ -230,8 +230,8 @@ a:hover {
 }
 
 .about-us-info a:hover {
-  background: #404140;
-  color: white;
+  background: white;
+  color: black;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   transform: translateY(10px);
 }
@@ -342,7 +342,7 @@ a:hover {
 }
 
 .history-info h2 {
-  color: #9F70FD;
+  color: #FF8911;
   font-size: 40pt;
   text-align: left;
   font-family: 'Poppins';
@@ -355,7 +355,7 @@ a:hover {
 }
 
 .history-info p {
-  color: #9F70FD;
+  color: #FF8911;
   font-size: 14pt;
   text-align: left;
   font-family: 'Poppins';
@@ -368,7 +368,7 @@ a:hover {
 }
 
 .history-info a {
-  background-color: #7F27FF;
+  background-color: #FF8911;
   color: white;
   width: 180px;
   text-align: center;
@@ -379,8 +379,8 @@ a:hover {
 }
 
 .history-info a:hover {
-  background: #404140;
-  color: white;
+  background: white;
+  color: #404140;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   transform: translateY(10px);
 }
