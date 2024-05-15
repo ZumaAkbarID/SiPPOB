@@ -1,8 +1,9 @@
 <script setup></script>
 
 <template>
-  <navbar />
-
+  <button type="button" class="btn-close bg-light m-3" aria-label="Close">
+    <RouterLink :to="{ name: 'home' }" aria-current="page"><span style="opacity: 0">x</span></RouterLink>
+  </button>
   <div class="daftar-container">
     <form @submit.prevent="daftar" class="daftar-form">
       <h2 class="form-title">Daftar</h2>
@@ -51,7 +52,6 @@
       class="path-0 transition-all delay-150 duration-300 ease-in-out"
     ></path>
   </svg>
-  <layout-footer />
 </template>
 
 <style scoped>
