@@ -68,6 +68,14 @@ const routes = [
       title: 'Daftar | ' + AppName
     }
   },
+  {
+    path: '/pembayaran',
+    component: () => import('#components/Pembayaran.vue'),
+    name: 'pembayaran',
+    meta: {
+      title: 'Pembayaran | ' + AppName
+    }
+  }
 ];
 
 const router = createRouter({
