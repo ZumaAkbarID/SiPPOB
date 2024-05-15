@@ -1,8 +1,9 @@
 <script setup></script>
 
 <template>
-  <navbar />
-
+  <button type="button" class="btn-close bg-light m-3" aria-label="Close">
+    <RouterLink :to="{ name: 'home' }" aria-current="page"><span style="opacity: 0;">x</span></RouterLink>
+  </button>
   <div class="login-container">
     <form @submit.prevent="login" class="login-form">
       <h2 class="form-title">Login</h2>
@@ -49,8 +50,6 @@
       class="path-0 transition-all delay-150 duration-300 ease-in-out"
     ></path>
   </svg>
-
-  <layout-footer />
 </template>
 
 <style scoped>
@@ -62,6 +61,9 @@
   height: 100vh;
 }
 
+.btn-close {
+  background-color: transparent;
+}
 /* Customizing the login form */
 .login-form {
   width: 430px;
