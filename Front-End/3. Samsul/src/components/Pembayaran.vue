@@ -48,7 +48,6 @@
                    <div class="kolom satu">
                         <a href="#" class="link mobile-legends"><p>Mobile Legends</p></a>
                         <p class="diamond">jumlah diamond</p>
-
                         <p class="nickname-user">Nickname : </p>
                         <p class="id-user">ID : </p>
                         <p class="server-user">Server :</p>
@@ -65,33 +64,49 @@
                         <div class="col code">
                             <button class="btn copy-1">
                                 Codexxxxxxx
-                                <img src="/src/assets/img/icon_clipboard.png" class="icon clipboard-white">
+                                <img src="/src/assets/img/icon_clipboard_white.png" class="icon clipboard-white">
                             </button>
                         </div>                       
                     </div>
                     
                     <div class="row kanan-dua">
-                        <div class="col transaksi">Status Transaksi</div>                                           
-                        <div class="col pending"><span class="span pending">Pending</span></div>
+                        <div class="col transaksi">
+                            Status Transaksi
+                        </div>                                           
+                        <div class="col pending">
+                            <span class="span pending">
+                                Pending
+                            </span>
+                        </div>
                     </div>
 
                     <div class="row kanan-tiga">
-                        <div class="col pembayaran">Status Pembayaran</div>
-                        <div class="col unpaid"><span class="span unpaid">Unpaid</span></div>
+                        <div class="col pembayaran">
+                            Status Pembayaran
+                        </div>
+                        <div class="col unpaid">
+                            <span class="span unpaid">
+                                Unpaid
+                            </span>
+                        </div>
                     </div>
 
                     <div class="row kanan-empat">
-                        <div class="col pesan">Pesan</div>
-                        <div class="col tunggu-pembayaran">Menunggu pembayaran</div>
+                        <div class="col pesan">
+                            Pesan
+                        </div>
+                        <div class="col tunggu-pembayaran">
+                            Menunggu pembayaran
+                        </div>
                     </div>
-                </div>
-                
+                </div>               
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-6 col-md-5 col-lg-6 tiga">
                 <div class="container">
+
                     <div class="row">                        
                             <button class="btn rincian-pembayaran" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                 Rincian Pembayaran
@@ -101,32 +116,53 @@
                             <div class="card card-body">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col harga">Harga</div>
-                                        <div class="col harga-angka">Rp 1.xxx</div>
+                                        <div class="col harga">
+                                            Harga
+                                        </div>
+                                        <div class="col harga-angka">
+                                            Rp 1.xxx
+                                        </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col jumlah">Jumlah</div>
-                                        <div class="col jumlah-angka">1x</div>
+                                        <div class="col jumlah">
+                                            Jumlah
+                                        </div>
+                                        <div class="col jumlah-angka">
+                                            1x
+                                        </div>
                                     </div>
                                     
                                     <hr>
 
                                     <div class="row">
-                                        <div class="col subtotal">Subtotal</div>
-                                        <div class="col subtotal-angka">Rp 1.xxx</div>
+                                        <div class="col subtotal">
+                                            Subtotal
+                                        </div>
+                                        <div class="col subtotal-angka">
+                                            Rp 1.xxx
+                                        </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col biaya">Biaya</div>
-                                        <div class="col biaya-angka">Rp 5x</div>
+                                        <div class="col biaya">
+                                            Biaya
+                                        </div>
+                                        <div class="col biaya-angka">
+                                            Rp 5x
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="row total">
-                        <div class="col"><h2 class="h2 total">Total Pembayaran</h2></div>
+                        <div class="col">
+                            <h2 class="h2 total">
+                                Total Pembayaran
+                            </h2>
+                        </div>
                         <div class="col copy-1">
                             <button class="btn copy-2">
                                 Rp 1.xxx
@@ -134,13 +170,21 @@
                             </button>
                         </div>
                    </div>
-                    <div class="row">
+                    
+                   <div class="row">
                         <div class="col">
-                            <p class="pesan reminder">Masukkan <b>nomor OVO</b> anda pada tombol orange di bawah, lalu buka aplikasi OVO dan cari pembayaran <b>TOP-UP IN</b> di notifikasi</p>
+                            <p class="pesan reminder">
+                                Masukkan <b>nomor OVO</b> anda pada tombol orange di bawah, lalu buka aplikasi OVO dan cari pembayaran <b>TOP-UP IN</b> di notifikasi
+                            </p>
                         </div>
                     </div>
+
                     <div class="row">
-                        <div class="col proges"><h5 class="h5 proges">Progess Transaksi</h5></div>
+                        <div class="col proges">
+                            <h5 class="h5 proges">
+                                Progess Transaksi
+                            </h5>
+                        </div>
                         
                         <div class="timeline">                            
                                 <ul class="timeline-with-icons">
@@ -158,7 +202,7 @@
 
                                     <li class="timeline-item mb-5">
                                         <span class="timeline-icon dua">
-                                            titik
+                                            <i class="fa-solid fa-circle satu"></i>
                                         </span>
                                         <h5 class="h5 pembayaran">
                                             Pembayaran
@@ -170,7 +214,7 @@
 
                                     <li class="timeline-item mb-5">
                                         <span class="timeline-icon tiga">
-                                            kosong
+                                            <i class="fa-solid fa-circle dua"></i>
                                         </span>
                                         <h5 class="h5 selesai">
                                             Selesai
@@ -187,10 +231,41 @@
             </div>
 
             <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 empat">
-                <button class="btn bayar">
+                <button type="button" class="btn bayar" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Masukkan nomor OVO terdaftar kamu 
                     <img src="/src/assets/img/icon_shared_boxed.png" class="icon shared-boxed">
                 </button>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Satu Langkah Lagi!!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="input-group mb-3">                       
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Negara
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">1</a></li>
+                                        <li><a class="dropdown-item" href="#">2</a></li>
+                                        <li><a class="dropdown-item" href="#">3</a></li>
+                                        <li><a class="dropdown-item" href="#">4</a></li>
+                                    </ul>
+                                    <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Silahkan masukkan nomor OVO kamu">
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn batal" data-bs-dismiss="modal">Batal</button>
+                                <button type="button" class="btn kirim">Kirim</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <hr>
@@ -352,6 +427,7 @@ export default {
 .btn.copy-1{
     color: white;
     background-color: #4A5157;
+    border: 1px solid transparent;
 }
 
 .btn.copy-1:hover {
@@ -385,6 +461,7 @@ export default {
     margin-top: 30px;
     color: white;
     background-color: #4A5157;
+    border: 1px solid transparent;
 }
 
 .btn.rincian-pembayaran:hover {
@@ -403,7 +480,8 @@ export default {
 }
 
 .col.harga-angka, .col.jumlah-angka, .col.subtotal-angka, .col.biaya-angka {
-    padding-left: 400px;
+    display: flex;
+    justify-content: right;
 }
 
 .btn.copy-2{
@@ -496,15 +574,33 @@ export default {
 }
 
 .timeline-icon.dua {
-    background-color: #F97316;
+    background-color: #1E2022;
     color: white;
+    border: 2px solid #F97316;
 }
 
 .timeline-icon.tiga {
-    background-color: transparent;
-    color: white;
-    border: 1px solid;
+    background-color: #1E2022;
+    color: #E6E6E6;
+    border: 2px solid;
 }
+
+.fa-solid.fa-circle.satu{
+    color: #FB923C;
+}
+
+.fa-solid.fa-circle.satu:hover{
+    color: #F96E1C;
+}
+
+.fa-solid.fa-circle.dua{
+    color: transparent;
+}
+
+.fa-solid.fa-circle.dua:hover{
+    color: #5E666E;
+}
+
 .h5.transaksi {
     color: #22B83B;
 }
@@ -534,15 +630,50 @@ export default {
     color: #C3C9CC;
 }
 
+
 /* KOLOM KANAN BAWAH */
 
 .btn.bayar{
     margin-top: 30px;
     color: white;
     background-color: #F96E1C;
+    border: 1px solid transparent;
 }
 
 .btn.bayar:hover {
+    background-color: #FB923C;
+}
+
+.modal-dialog{
+    text-align: center;
+    color: white;
+}
+
+.modal-content{
+    background-color: #1E2022;
+}
+.btn.btn-outline-secondary.dropdown-toggle{
+    background-color: white;
+    color: black;
+}
+
+.btn.batal{
+    margin-top: 30px;
+    color: white;
+    background-color: #4A5157;
+}
+
+.btn.batal:hover{
+    background-color: #3D4348;
+}
+
+.btn.kirim{
+    margin-top: 30px;
+    color: white;
+    background-color: #F96E1C;
+}
+
+.btn.kirim:hover{
     background-color: #FB923C;
 }
 
