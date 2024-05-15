@@ -34,12 +34,9 @@
                 placeholder="Inv-0xxxxx"
               />
             </div>
-            <button
-              type="button"
-              class="btn btn-warning mt-2 text-white fw-bold"
-            >
-              <i class="fa-solid fa-magnifying-glass"></i> Cek Transaksi
-            </button>
+            <RouterLink :to="{ name: 'pembayaran' }" class="btn btn-warning mt-2 text-white fw-bold"
+            ><i class="fa-solid fa-magnifying-glass"></i> Cek Transaksi</RouterLink
+          >
           </form>
         </div>
       </div>
