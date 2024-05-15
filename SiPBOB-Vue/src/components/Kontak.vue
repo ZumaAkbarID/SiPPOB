@@ -2,7 +2,7 @@
   <div>
     <navbar />
 
-    <div id="form-search" class="text-white py-5">
+    <div id="form-search" class="text-black py-5">
       <ul class="circles">
         <li></li>
         <li></li>
@@ -91,8 +91,8 @@ export default {};
 #form-search {
   position: relative;
   z-index: 1;
-  background: #4e54c8;
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  background: #f1c94f;
+  background: -webkit-linear-gradient(to left, #ff9900, #b5590d, #dfea15));
 }
 
 .rounded {
@@ -120,7 +120,7 @@ svg {
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(221, 106, 53, 0.493);
   animation: animate 25s linear infinite;
   bottom: -150px;
 }
