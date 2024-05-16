@@ -4,31 +4,27 @@
         <div class="container atas">
             <div class="row">
 
-                <div class="col-7 satu">
+                <div class="col-12 satu">
                     <h4>Terima Kasih!</h4>
                 </div>
 
-                <div class="col-7 dua">
+                <div class="col-12 dua">
                     <h1 class="h1 harap">Harap lengkapi pembayaran.</h1>
                 </div>
 
-                <div class="col-7 tiga">
+                <div class="col-12 tiga">
                     <h5 class="h5 pesanan">Pesanan kamu <span>(Codexxxxxxxx)</span> menunggu pembayaran sebelum dikirim.</h5>
                 </div>
 
-                <div class="col-7 empat">
+                <div class="col-12 empat">
                     <h6>Pesanan ini akan kadaluwarsa pada</h6>
                 </div>
 
-                <div class="col-12 lima">
-                    <p></p>
-                </div>
-
-                <div class="col-2 tujuh">
+                <div class="col-6 lima">
                     <p>{{ timerCount }}</p>
                 </div>
 
-                <div class="col-10 enam">
+                <div class="col-6 enam">
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button class="btn invoice" type="button">
                             <img src="/assets/img/icon_printer.png" class="btn-printer">
@@ -60,8 +56,8 @@
                 <hr>
                 <div class="container">
                     <div class="row kanan-satu">
-                        <div class="col invoice">Nomor Invoice</div>                      
-                        <div class="col code">
+                        <div class="col-6 invoice">Nomor Invoice</div>                      
+                        <div class="col-6 invoice">
                             <button class="btn copy-1">
                                 Codexxxxxxx
                                 <img src="/assets/img/icon_clipboard_white.png" class="icon clipboard-white">
@@ -70,10 +66,10 @@
                     </div>
                     
                     <div class="row kanan-dua">
-                        <div class="col transaksi">
+                        <div class="col-6 transaksi">
                             Status Transaksi
                         </div>                                           
-                        <div class="col pending">
+                        <div class="col-6 pending">
                             <span class="span pending">
                                 Pending
                             </span>
@@ -81,10 +77,10 @@
                     </div>
 
                     <div class="row kanan-tiga">
-                        <div class="col pembayaran">
+                        <div class="col-6 pembayaran">
                             Status Pembayaran
                         </div>
-                        <div class="col unpaid">
+                        <div class="col-6 unpaid">
                             <span class="span unpaid">
                                 Unpaid
                             </span>
@@ -92,11 +88,11 @@
                     </div>
 
                     <div class="row kanan-empat">
-                        <div class="col pesan">
+                        <div class="col-6 pesan">
                             Pesan
                         </div>
-                        <div class="col tunggu-pembayaran">
-                            Menunggu pembayaran
+                        <div class="col-6 tunggu-pembayaran">
+                            <span class="span tunggu-pembayaran">Menunggu pembayaran</span>
                         </div>
                     </div>
                 </div>               
@@ -158,12 +154,12 @@
                     </div>
 
                     <div class="row total">
-                        <div class="col">
-                            <h2 class="h2 total">
+                        <div class="col-6">
+                            <h4 class="h4 total">
                                 Total Pembayaran
-                            </h2>
+                            </h4>
                         </div>
-                        <div class="col copy-1">
+                        <div class="col-6 copy-2">
                             <button class="btn copy-2">
                                 Rp 1.xxx
                                 <img src="/assets/img/icon_clipboard.png" class="icon clipboard">
@@ -230,7 +226,7 @@
 
             </div>
 
-            <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 empat">
+            <div class="col bayar">
                 <button type="button" class="btn bayar" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Masukkan nomor OVO terdaftar kamu 
                     <img src="/assets/img/icon_shared_boxed.png" class="icon shared-boxed">
@@ -249,10 +245,10 @@
                                         Negara
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">1</a></li>
-                                        <li><a class="dropdown-item" href="#">2</a></li>
-                                        <li><a class="dropdown-item" href="#">3</a></li>
-                                        <li><a class="dropdown-item" href="#">4</a></li>
+                                        <li><a class="dropdown-item" href="#">Indonesia</a></li>
+                                        <li><a class="dropdown-item" href="#">Malaysia</a></li>
+                                        <li><a class="dropdown-item" href="#">Jepang</a></li>
+                                        <li><a class="dropdown-item" href="#">Korea Selatan</a></li>
                                     </ul>
                                     <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Silahkan masukkan nomor OVO kamu">
                                 </div>
@@ -267,9 +263,26 @@
                 </div>
             </div>
         </div>
-        <hr>
+
     </div>
 
+    <svg
+        width="100%"
+        height="100%"
+        id="svg"
+        viewBox="0 0 1440 390"
+        xmlns="http://www.w3.org/2000/svg"
+        class="-mt-8 transition delay-150 duration-300 ease-in-out print:hidden md:-mt-24"
+      >
+        <path
+          d="M 0,400 C 0,400 0,200 0,200 C 40.34909359970402,243.0042668639783 80.69818719940804,286.0085337279566 135,268 C 189.30181280059196,249.9914662720434 257.5563448020718,170.97013195215192 311,159 C 364.4436551979282,147.02986804784808 403.07643359230485,202.11093846343573 452,207 C 500.92356640769515,211.88906153656427 560.137920828709,166.58611419410528 626,169 C 691.862079171291,171.41388580589472 764.3718830928599,221.54460476014305 826,248 C 887.6281169071401,274.45539523985695 938.3745467998519,277.2354667653225 985,246 C 1031.625453200148,214.7645332346775 1074.1299297077323,149.51352817856701 1122,137 C 1169.8700702922677,124.48647182143299 1223.1057343692194,164.71042052040943 1277,184 C 1330.8942656307806,203.28957947959057 1385.4471328153904,201.64478973979527 1440,200 C 1440,200 1440,400 1440,400 Z"
+          stroke="none"
+          stroke-width="0"
+          fill="#34373b"
+          fill-opacity="1"
+          class="path-0 transition-all delay-150 duration-300 ease-in-out"
+        ></path>
+      </svg>
     </main>
     <layout-footer/>
 </template>
@@ -309,7 +322,7 @@ export default {
     color: white;
 }
 
-.col-7.satu{
+.col-12.satu{
     color: #F96E1C;
     margin-top: 50px;
 }
@@ -322,28 +335,28 @@ export default {
     font-weight:normal;
     color: #C3C9CC;
 }
-.col-7.tiga{
+.col-12.tiga{
     margin-bottom: 30px;
 }
 
-.col-7.tiga span{
+.col-12.tiga span{
     color: #F96E1C;
 }
 
-.col-2.tujuh {
+.col-6.lima {
     display: flex;
-    justify-content: center;
     color: white;
 }
 
-.col-2.tujuh p {
+.col-6.lima p {
     padding: 6px 30px;
     border: 1px solid #F43F5E;
     border-radius: 5px;
     background-color: #F43F5E;
 }
+
+
 .btn.invoice{
-    
     color: white;
     background-color: #F96E1C;
 }
@@ -419,14 +432,14 @@ export default {
     padding-top: 20px;
 }
 
-.col.code, .col.pending, .col.unpaid, .col.tunggu-pembayaran {
-    padding-left: 100px;
+.col-6.invoice{
+    display: flex;
 }
-
 .btn.copy-1{
     color: white;
     background-color: #4A5157;
     border: 1px solid transparent;
+    margin-left: auto;
 }
 
 .btn.copy-1:hover {
@@ -439,18 +452,35 @@ export default {
     margin: 0 0 4px 5px;
 }
 
-.span.pending {
+.col-6.pending{
+    display: flex;
+}
+
+.span.pending{
+    margin-left: auto;
     background-color: #FDE047;
     color: #854D0E;
     padding: 3px 10px;
 }
 
-.span.unpaid{
-    background-color: #FDA4AF;
-    color: #854D0E;
-    padding: 2px 10px;
+.col-6.unpaid{
+    display: flex;
 }
 
+.span.unpaid{
+    margin-left: auto;
+    background-color: #FDA4AF;
+    color: #854D0E;
+    padding: 3px 10px;
+}
+
+.col-6.tunggu-pembayaran{
+    display: flex;
+}
+
+.span.tunggu-pembayaran{
+    margin-left: auto;
+}
 /* KOLOM KIRI BAWAH */
 
 .btn.rincian-pembayaran {
@@ -483,14 +513,19 @@ export default {
     justify-content: right;
 }
 
+.col-6.copy-2{
+    display: flex;
+}
 .btn.copy-2{
+    max-width: 100%;
+    width: 9rem;
     font-size: 20px;
     font-weight: bold;
-    margin-left: 150px;
     margin-bottom: 40px;
     color: #F97316;
     background-color: #4A5157;
     border: 1px solid;
+    margin-left: auto;
 }
 
 .btn.copy-2:hover {
@@ -535,6 +570,7 @@ export default {
 }
 
 .timeline-with-icons {
+    margin-left: 2rem;
   border-left: 1px solid hsl(0, 0%, 90%);
   position: relative;
   list-style: none;
@@ -632,6 +668,9 @@ export default {
 
 /* KOLOM KANAN BAWAH */
 
+.col.bayar{
+    margin-left: 1rem;
+}
 .btn.bayar{
     margin-top: 30px;
     color: white;
