@@ -2,21 +2,43 @@
 
 <template>
   <button type="button" class="btn-close bg-light m-3" aria-label="Close">
-    <RouterLink :to="{ name: 'home' }" aria-current="page"><span style="opacity: 0">x</span></RouterLink>
+    <RouterLink :to="{ name: 'home' }" aria-current="page"
+      ><span style="opacity: 0">x</span></RouterLink
+    >
   </button>
   <div class="login-container">
     <form @submit.prevent="login" class="login-form">
       <h2 class="form-title">Login</h2>
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" v-model="username" id="username" class="form-control" placeholder="Masukkan username" required />
+        <input
+          type="text"
+          v-model="username"
+          id="username"
+          class="form-control"
+          placeholder="Masukkan username"
+          required
+        />
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" v-model="password" id="password" class="form-control" placeholder="Masukkan password" required />
+        <input
+          type="password"
+          v-model="password"
+          id="password"
+          class="form-control"
+          placeholder="Masukkan password"
+          required
+        />
       </div>
 
-      <button type="submit" class="btn btn-primary btn-block form-group" style="margin-top: 5px">Login</button>
+      <RouterLink
+        :to="{ name: 'dashboard' }"
+        class="btn btn-primary btn-block form-group"
+        style="margin-top: 5px"
+      >
+        Login
+      </RouterLink>
 
       <div class="row form-group">
         <div class="d-md-flex justify-content">
@@ -35,12 +57,21 @@
       <div>
         <p class="text-center">
           Belum memiliki akun?
-          <RouterLink :to="{ name: 'daftar' }" aria-current="page">Daftar</RouterLink>
+          <RouterLink :to="{ name: 'daftar' }" aria-current="page"
+            >Daftar</RouterLink
+          >
         </p>
       </div>
     </form>
   </div>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <svg
+    width="100%"
+    height="100%"
+    id="svg"
+    viewBox="0 0 1440 390"
+    xmlns="http://www.w3.org/2000/svg"
+    class="delay-150 duration-300 ease-in-out print:hidden"
+  >
     <path
       fill="#34373b"
       fill-opacity="1"

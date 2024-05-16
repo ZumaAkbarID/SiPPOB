@@ -64,7 +64,7 @@ export default {
       teamMembers: [
         {
           name: "Dennita Noor Febianty",
-          role: "Back End",
+          role: "Fullstack",
           image: "/assets/Foto/Nita.png",
           instagram: "https://www.instagram.com/its_ntakk/",
           github: "https://github.com/",
@@ -74,7 +74,7 @@ export default {
         },
         {
           name: "Rahmat Wahyuma Akbar",
-          role: "Back End",
+          role: "Fullstack",
           image: "/assets/Foto/Zuma.jpeg",
           instagram: "https://www.instagram.com/zuma.akbar",
           github: "https://github.com/ZumaAkbarID",
@@ -92,7 +92,7 @@ export default {
         },
         {
           name: "Dico Fathatul Rizki",
-          role: "Front End",
+          role: "Fullstack",
           image: "/assets/Foto/Dico.JPG",
           instagram: "https://www.instagram.com/",
           github: "https://github.com/",
@@ -101,7 +101,7 @@ export default {
         },
         {
           name: "Muhamad Syamsul Hidayat",
-          role: "Front End",
+          role: "Fullstack",
           image: "/assets/Foto/Syamsul.JPG",
           instagram: "https://www.instagram.com/",
           github: "https://github.com/",
@@ -110,7 +110,7 @@ export default {
         },
         {
           name: "Praditus Egi Danuarta",
-          role: "Front End",
+          role: "Fullstack",
           image: "/assets/Foto/Egi.JPG",
           instagram: "https://www.instagram.com/",
           github: "https://github.com/",
