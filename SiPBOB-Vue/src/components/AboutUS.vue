@@ -1,47 +1,71 @@
 <template>
-  <navbar/> <!-- ini kan manggil file navbar ---->
+  <navbar />
+  <!-- ini kan manggil file navbar ---->
 
   <!-- ngoding disini ya ---->
   <div class="we-are-block">
-<div id="about-us-section">
-  <div class="about-us-image">
-    <img src="https://th.bing.com/th/id/R.4ba6711ced142e3228125a8f17f41c4d?rik=Q3PaZ02mBpV72Q&riu=http%3a%2f%2fppm.amikom.ac.id%2fresource%2fassets%2fimages%2fLogo_Amikom_color.png&ehk=V7cYZMsJXDDxRfAaCfG8%2bTQ5xLmXYvheMIDCb0EL5kI%3d&risl=&pid=ImgRaw&r=0" width="808" height="" alt="Lobby Image">
+    <div id="about-us-section">
+      <div class="about-us-image">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/id/thumb/c/c7/AMIKOM_LOGO.svg/1200px-AMIKOM_LOGO.svg.png"
+          width="808"
+          height=""
+          alt="Lobby Image"
+        />
+      </div>
+
+      <div class="about-us-info">
+        <h2>Visi & Misi</h2>
+        <h3>Visi</h3>
+        <p>
+          Menjadi layanan top-up game terkemuka dan terpercaya bagi pemain game
+          di seluruh Indonesia.
+        </p>
+
+        <h3>Misi</h3>
+        <p>
+          Memberikan layanan top-up game yang cepat, mudah, dan aman bagi pemain
+          game di Indonesia dengan layanan pelanggan yang responsif dan
+          memuaskan
+        </p>
+        <RouterLink :to="{ name: 'home' }">KONTAK</RouterLink>
+      </div>
+    </div>
+
+    <div id="history-section">
+      <div class="history-image">
+        <img
+          src="/assets/topupin-logo.png"
+          width="808"
+          height=""
+          alt="Building Pic"
+        />
+      </div>
+
+      <div class="history-info">
+        <h2>Sejarah Perusahaan</h2>
+        <p>
+          Pada tahun 2020, dunia mengalami pandemi Covid-19 yang mengharuskan
+          masyarakat mengurangi kegiatan di luar rumah dan menghabiskan waktu
+          lebih banyak di rumah. Tak sedikit yang merasa kaget dengan pandemi
+          yang terjadi secara mendadak, beberapa dari mereka memutuskan untuk
+          menghabiskan waktu dan melepas stress dengan bermain game. Kami hadir
+          untuk melengkapi pengalaman bermain yang lebih lengkap dengan top-up
+          game melalui perusahaan kami. Besar harapan kami untuk dapat terus
+          bersaing dengan sehat kedepannya.
+        </p>
+
+        <RouterLink :to="{ name: 'kontak' }">KONTAK</RouterLink>
+      </div>
+    </div>
   </div>
 
-  <div class="about-us-info">
-    <h2>Visi & Misi</h2>
-    <h3>Visi</h3>
-    <p>Menjadi layanan top-up game terkemuka dan terpercaya bagi pemain game di seluruh Indonesia.</p>
-
-    <h3>Misi</h3>
-    <p>Memberikan layanan top-up game yang cepat, mudah, dan aman bagi pemain game di Indonesia dengan layanan pelanggan yang responsif dan memuaskan</p>
-    <a href="/" title="to Beranda">BERANDA</a>
-  </div>
-</div>
-
-<div id="history-section">
-  <div class="history-image">
-    <img src="/assets/topupin-logo.png" width="808" height="" alt="Building Pic">
-  </div>
-
-  <div class="history-info">
-    <h2>Sejarah Perusahaan</h2>
-    <p>Pada tahun 2020, dunia mengalami pandemi Covid-19 yang mengharuskan masyarakat mengurangi kegiatan di luar rumah dan menghabiskan waktu lebih banyak di rumah. 
-        Tak sedikit yang merasa kaget dengan pandemi yang terjadi secara mendadak, beberapa dari mereka memutuskan untuk menghabiskan waktu dan melepas stress dengan bermain game.
-        Kami hadir untuk melengkapi pengalaman bermain yang lebih lengkap dengan top-up game melalui perusahaan kami. Besar harapan kami untuk dapat terus bersaing dengan sehat kedepannya.
-    </p>
-
-    <a href="/kontak" title="to contact">KONTAK</a>
-  </div>
-</div>
-
-</div>
-
-  <layout-footer/> <!-- ini kan manggil file footer ---->
+  <layout-footer />
+  <!-- ini kan manggil file footer ---->
 </template>
 
 <style scoped>
-    h1,
+h1,
 h2,
 h3,
 h4,
@@ -82,7 +106,7 @@ a:hover {
 }
 
 #about-us-section {
-  background: #FDBF60;
+  background: #fdbf60;
   width: 100%;
   height: 50%;
   display: flex;
@@ -139,7 +163,7 @@ a:hover {
   margin-right: 850px;
   margin-left: 12px;
   z-index: 2;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 @media screen and (max-width: 1353px) {
@@ -190,7 +214,7 @@ a:hover {
   color: black;
   font-size: 40pt;
   text-align: right;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 @media screen and (max-width: 860px) {
@@ -199,17 +223,17 @@ a:hover {
   }
 }
 
-.about-us-info h3{
-    color: white;
-    text-align: left;
-    font-family: 'Poppins';
+.about-us-info h3 {
+  color: white;
+  text-align: left;
+  font-family: "Poppins";
 }
 
 .about-us-info p {
   color: black;
   font-size: 14pt;
   text-align: right;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 @media screen and (max-width: 860px) {
@@ -225,7 +249,7 @@ a:hover {
   text-align: center;
   padding: 15px 0px 15px 0px;
   font-size: 14pt;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
@@ -294,7 +318,7 @@ a:hover {
   margin-left: 850px;
   margin-right: 12px;
   z-index: 2;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 @media screen and (max-width: 1353px) {
@@ -342,10 +366,10 @@ a:hover {
 }
 
 .history-info h2 {
-  color: #FF8911;
+  color: #ff8911;
   font-size: 40pt;
   text-align: left;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 @media screen and (max-width: 860px) {
@@ -355,10 +379,10 @@ a:hover {
 }
 
 .history-info p {
-  color: #FF8911;
+  color: #ff8911;
   font-size: 14pt;
   text-align: left;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 @media screen and (max-width: 860px) {
@@ -368,14 +392,14 @@ a:hover {
 }
 
 .history-info a {
-  background-color: #FF8911;
+  background-color: #ff8911;
   color: white;
   width: 180px;
   text-align: center;
   padding: 15px 0px 15px 0px;
   font-size: 14pt;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 .history-info a:hover {
@@ -384,5 +408,4 @@ a:hover {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   transform: translateY(10px);
 }
-
 </style>

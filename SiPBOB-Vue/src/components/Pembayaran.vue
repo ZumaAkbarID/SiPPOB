@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col-6 lima">
-                    <p>{{ timerCount }}</p>
+                    <span>{{ hours }} : {{ minutes }} : {{ seconds }}</span>
                 </div>
 
                 <div class="col-6 enam">
@@ -245,10 +245,10 @@
                                         Negara
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                                        <li><a class="dropdown-item" href="#">Malaysia</a></li>
-                                        <li><a class="dropdown-item" href="#">Jepang</a></li>
-                                        <li><a class="dropdown-item" href="#">Korea Selatan</a></li>
+                                        <li><a class="dropdown-item" href="#">1</a></li>
+                                        <li><a class="dropdown-item" href="#">2</a></li>
+                                        <li><a class="dropdown-item" href="#">3</a></li>
+                                        <li><a class="dropdown-item" href="#">4</a></li>
                                     </ul>
                                     <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Silahkan masukkan nomor OVO kamu">
                                 </div>
@@ -289,29 +289,40 @@
 
 <script>
 export default {
-    data() {
-            return {
-                timerCount: 3600
-            }
-        },
-
-        watch: {
-
-            timerCount: {
-                handler(value) {
-
-                    if (value > 0) {
-                        setTimeout(() => {
-                            this.timerCount--;
-                        }, 1000);
-                    }
-
-                },
-                immediate: true // This ensures the watcher is triggered upon creation
-            }
-
-        }
-}
+  data() {
+    return {
+      hours: 2,
+      minutes: 59,
+      seconds: 59,
+      timer: null,
+    };
+  },
+  mounted() {
+    this.startTimer();
+  },
+  beforeDestroy() {
+    this.stopTimer();
+  },
+  methods: {
+    startTimer() {
+      this.timer = setInterval(this.updateTime, 1000);
+    },
+    stopTimer() {
+      clearInterval(this.timer);
+    },
+    updateTime() {
+      this.seconds--;
+      if (this.seconds === 0) {
+        this.seconds = 59;
+        this.minutes--;
+      }
+      if (this.minutes === 0) {
+        this.minutes = 59;
+        this.hours--;
+      }
+    },
+  },
+};
 </script>
 
 
@@ -348,13 +359,12 @@ export default {
     color: white;
 }
 
-.col-6.lima p {
-    padding: 6px 30px;
+.col-6.lima span {
+    padding: 6px 20px;
     border: 1px solid #F43F5E;
     border-radius: 5px;
     background-color: #F43F5E;
 }
-
 
 .btn.invoice{
     color: white;
