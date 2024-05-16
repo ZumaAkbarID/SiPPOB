@@ -1,6 +1,6 @@
 <template>
-<navbar />
-<hero />
+<navbar />  <!-- menambahkan navbar -->
+<hero /> <!-- manambahkan hero -->
 
 
   <div class="landing">
@@ -24,8 +24,8 @@
     </div>
   </div>
 
-  <layout-footer />
-</template>
+  <layout-footer />  <!-- menambahkan footer -->
+</template> 
 
 <script>
 import hero from './hero.vue';
