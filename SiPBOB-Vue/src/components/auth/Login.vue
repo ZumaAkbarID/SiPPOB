@@ -32,10 +32,13 @@
         />
       </div>
 
-      <!-- <button type="submit" class="btn btn-primary btn-block form-group" style="margin-top: 5px">Login</button> -->
-      <RouterLink :to="{ name: 'dashboard' }" class="btn  btn-primary btn-block form-group"
-            >Login</RouterLink
-          >
+      <RouterLink
+        :to="{ name: 'dashboard' }"
+        class="btn btn-primary btn-block form-group"
+        style="margin-top: 5px"
+      >
+        Login
+      </RouterLink>
 
       <div class="row form-group">
         <div class="d-md-flex justify-content">
