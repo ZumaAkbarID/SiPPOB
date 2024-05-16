@@ -28,7 +28,7 @@
           game di Indonesia dengan layanan pelanggan yang responsif dan
           memuaskan
         </p>
-        <a href="/" title="to Beranda">BERANDA</a>
+        <RouterLink :to="{ name: 'home' }">KONTAK</RouterLink>
       </div>
     </div>
 
@@ -55,7 +55,7 @@
           bersaing dengan sehat kedepannya.
         </p>
 
-        <a href="/kontak" title="to contact">KONTAK</a>
+        <RouterLink :to="{ name: 'kontak' }">KONTAK</RouterLink>
       </div>
     </div>
   </div>
