@@ -7,7 +7,7 @@
       <div class="container">
         <h1 class="display-4 mb-4">Selamat Datang di TOP-UP IN!</h1>
         <!-- Tambahkan mb-4 untuk memberi jarak bawah -->
-        <p class="lead mb-4">
+        <p class="lead mb-5">
           <!-- Tambahkan mb-4 untuk memberi jarak bawah -->
           Kami menyediakan layanan top-up untuk berbagai game populer. Silakan
           pilih game favorit Anda dan mulai top-up sekarang!
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <layout-footer />
+    <layout-footer /> <!-- Tambahkan footer -->
   </div>
 </template>
 
@@ -47,8 +47,8 @@ export default {
 
   data() {
     return {
-      games: [
-        { id: 1, name: "Mobile Legends", image: "/assets/img/ml.png" },
+      games: [ // Daftar game yang akan ditampilkan
+        { id: 1, name: "Mobile Legends", image: "/assets/img/ml.png" }, // Tambahkan game lain sesuai kebutuhan Anda
         { id: 2, name: "Free Fire", image: "/assets/img/ff.png" },
         { id: 3, name: "PUBG Mobile", image: "/assets/img/pubg.png" },
         { id: 4, name: "Call of Duty: Mobile", image: "/assets/img/cod.png" },
@@ -70,7 +70,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped> /* Gaya CSS untuk komponen LandingPage */
 .landing {
   padding: auto;
   background-color: rgb(30 32 34); /* Warna ungu */
@@ -86,9 +86,10 @@ export default {
 .lead {
   font-size: 1.25rem; /* Ukuran teks yang sedikit lebih besar */
   color: #fff; /* Warna teks putih */
+  padding: ; /* Berikan jarak antara teks dan batas */
 }
 
-.game-card {
+.game-card {;
   height: auto; /* Set tinggi kartu */
   margin-bottom: 20px; /* Tambahkan jarak antara kartu */
 }
@@ -139,13 +140,13 @@ export default {
   box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.5); /* Efek bayangan saat fokus */
 }
 
-@media (max-width: 992px) {
+@media (max-width: 992px) { /* Atur kartu untuk layar berukuran kecil */
   .card-img-top {
     height: 150px; /* Atur tinggi gambar untuk layar berukuran kecil */
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Atur kartu untuk layar berukuran sangat kecil */
   .card {
     margin-bottom: 10px; /* Atur margin bawah kartu untuk layar berukuran kecil */
   }
