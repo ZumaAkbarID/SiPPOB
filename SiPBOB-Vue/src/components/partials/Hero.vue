@@ -62,7 +62,7 @@ export default {
 
 <style scoped>
 .hero {
-  padding: 20px 0;
+  padding: 50px 0;
   background-color: rgb(30 32 34);
 }
 
