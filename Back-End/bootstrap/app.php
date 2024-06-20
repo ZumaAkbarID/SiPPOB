@@ -4,7 +4,7 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -18,19 +18,21 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        $exceptions->render(function (ValidationException $ve): JsonResponse {
-            return response()->json([
-                'status' => false,
-                'message' => $ve->getMessage(),
-                'errors' => $ve->errors()
-            ], 422);
+        $exceptions->render(function (ValidationException $ve, Request $request) {
+            if ($request->is('api/*'))
+                return response()->json([
+                    'status' => false,
+                    'message' => $ve->getMessage(),
+                    'errors' => $ve->errors()
+                ], 422);
         });
 
-        $exceptions->render(function (AuthenticationException $ae): JsonResponse {
-            return response()->json([
-                'status' => false,
-                'message' => $ae->getMessage(),
-                'errors' => 'authorization'
-            ], 401);
+        $exceptions->render(function (AuthenticationException $ae, Request $request) {
+            if ($request->is('api/*'))
+                return response()->json([
+                    'status' => false,
+                    'message' => $ae->getMessage(),
+                    'errors' => 'authorization'
+                ], 401);
         });
     })->create();
