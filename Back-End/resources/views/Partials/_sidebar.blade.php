@@ -19,13 +19,13 @@
             <ul id="produk" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
                 <li>
-                    <a href="components-alerts.html">
+                    <a href="{{ route('kategori.index') }}">
                         <i class="bi bi-circle"></i><span>Kategori</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="components-alerts.html">
+                    <a href="{{ route('produk.index') }}">
                         <i class="bi bi-circle"></i><span>Produk</span>
                     </a>
                 </li>

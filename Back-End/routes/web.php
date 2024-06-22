@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\Authentication;
+use App\Http\Controllers\Category;
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Product;
 use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +25,7 @@ Route::group([
     'middleware' => [IsAdmin::class, 'auth']
 ], function () {
     Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
+
+    Route::get('kategori', [Category::class, 'index'])->name('kategori.index');
+    Route::resource('produk', Product::class);
 });
