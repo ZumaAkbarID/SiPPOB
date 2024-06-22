@@ -13,32 +13,45 @@
         <label for="username">Username</label>
         <input
           type="text"
-          v-model="username"
+          v-model="user.username"
           id="username"
           class="form-control"
           placeholder="Masukkan username"
           required
         />
+        <div v-if="validation.username" class="mt-2 alert alert-danger">
+          Masukkan Username
+        </div>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
         <input
           type="password"
-          v-model="password"
+          v-model="user.password"
           id="password"
           class="form-control"
           placeholder="Masukkan password"
           required
         />
+        <div v-if="validation.password" class="mt-2 alert alert-danger">
+          Masukkan Password
+        </div>
       </div>
 
-      <RouterLink
+      <!-- <RouterLink
         :to="{ name: 'dashboard' }"
         class="btn btn-primary btn-block form-group"
         style="margin-top: 5px"
       >
         Login
-      </RouterLink>
+      </RouterLink> -->
+      <button
+        type="submit"
+        class="btn btn-primary btn-block form-group"
+        style="margin-top: 5px"
+      >
+        LOGIN
+      </button>
 
       <div class="row form-group">
         <div class="d-md-flex justify-content">
@@ -64,21 +77,102 @@
       </div>
     </form>
   </div>
-  <svg
-    width="100%"
-    height="100%"
-    id="svg"
-    viewBox="0 0 1440 390"
-    xmlns="http://www.w3.org/2000/svg"
-    class="delay-150 duration-300 ease-in-out print:hidden"
-  >
-    <path
-      fill="#34373b"
-      fill-opacity="1"
-      d="M0,160L26.7,176C53.3,192,107,224,160,240C213.3,256,267,256,320,240C373.3,224,427,192,480,186.7C533.3,181,587,203,640,202.7C693.3,203,747,181,800,154.7C853.3,128,907,96,960,101.3C1013.3,107,1067,149,1120,165.3C1173.3,181,1227,171,1280,170.7C1333.3,171,1387,181,1413,186.7L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-    ></path>
-  </svg>
 </template>
+
+<script>
+import axios from "axios";
+import Swal from "sweetalert2";
+import NProgress from "NProgress";
+
+export default {
+  name: "Login",
+
+  data() {
+    return {
+      //state loggedIn with localStorage
+      loggedIn: localStorage.getItem("loggedIn"),
+      //state token
+      token: localStorage.getItem("token"),
+      //state user
+      user: [],
+      //state validation
+      validation: [],
+      //state login failed
+      loginFailed: false,
+      // Apinyah
+      base_api: import.meta.env.VITE_BASE_API,
+      secret_token: import.meta.env.VITE_SECRET_TOKEN,
+    };
+  },
+  methods: {
+    async login() {
+      if (this.user.username && this.user.password) {
+        NProgress.start();
+
+        await axios
+          .post(
+            this.base_api + "/auth/login",
+            {
+              username: this.user.username,
+              password: this.user.password,
+            },
+            {
+              headers: {
+                Accept: "application/json",
+                SECRET: this.secret_token,
+              },
+            }
+          )
+          .then((res) => {
+            if (res.data.status) {
+              localStorage.setItem("loggedIn", "true");
+              localStorage.setItem("username", this.user.username);
+              localStorage.setItem("token", res.data.data.token);
+
+              //change state
+              this.loggedIn = true;
+
+              //redirect dashboard
+              return this.$router.push({ name: "dashboard" });
+            } else {
+              //set state login failed
+              Swal.fire({
+                title: "Error!",
+                text: res.data.message,
+                icon: "error",
+              });
+            }
+          })
+          .catch((error) => {
+            Swal.fire({
+              title: "Error!",
+              text: error.response.data.message,
+              icon: "error",
+            });
+          });
+        NProgress.done();
+      }
+
+      this.validation = [];
+
+      if (!this.user.email) {
+        this.validation.email = true;
+      }
+
+      if (!this.user.password) {
+        this.validation.password = true;
+      }
+    },
+  },
+
+  //check user already logged in
+  mounted() {
+    if (this.loggedIn) {
+      return this.$router.push({ name: "dashboard" });
+    }
+  },
+};
+</script>
 
 <style scoped>
 /* Login container */

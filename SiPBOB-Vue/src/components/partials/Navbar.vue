@@ -60,18 +60,31 @@
         <div class="navbar-nav ms-lg-4">
           <RouterLink
             :to="{ name: 'masuk' }"
+            v-if="!loggedIn"
             class="nav-item anim-border-bottom nav-link nav-login"
             aria-current="page"
-            ><i class="fa-solid fa-arrow-right-to-bracket"></i> Masuk</RouterLink
+            ><i class="fa-solid fa-arrow-right-to-bracket"></i>
+            Masuk</RouterLink
           >
         </div>
         <!-- Action -->
         <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
           <RouterLink
             :to="{ name: 'daftar' }"
+            v-if="!loggedIn"
             class="btn btn-sm btn-warning nav-register w-full w-lg-auto px-3"
             aria-current="page"
             ><i class="fa-solid fa-user"></i> Daftar</RouterLink
+          >
+        </div>
+        <!-- Logedin -->
+        <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
+          <RouterLink
+            :to="{ name: 'dashboard' }"
+            v-if="loggedIn"
+            class="btn btn-sm btn-warning nav-register w-full w-lg-auto px-3"
+            aria-current="page"
+            ><i class="fa-solid fa-user"></i> {{ username }}</RouterLink
           >
         </div>
       </div>
@@ -80,7 +93,35 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Navbar",
+
+  data() {
+    return {
+      loggedIn: false,
+      username: "user",
+    };
+  },
+
+  methods: {
+    getLoggedIn() {
+      this.loggedIn = localStorage.getItem("loggedIn");
+    },
+    getUsername() {
+      this.username = localStorage.getItem("username");
+    },
+  },
+
+  watch: {
+    $route: {
+      immediate: true,
+      handler() {
+        this.getLoggedIn();
+        this.getUsername();
+      },
+    },
+  },
+};
 </script>
 
 <style scoped>

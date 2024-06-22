@@ -1,4 +1,5 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router'
+import NProgress from 'NProgress'
 
 const AppName = import.meta.env.VITE_APP_NAME;
 const DefaultTitle = 'Topup Murah Lengkap Legal | ' + AppName;
@@ -83,6 +84,14 @@ const routes = [
     meta: {
       title: 'Pembayaran | ' + AppName
     }
+  },
+  { // Default route, nek gaono seng ketemu routene
+    path: "/:pathMatch(.*)*",
+    component: import('#components/errors/404.vue'),
+    name: '404',
+    meta: {
+      title: '404 | ' + AppName
+    }
   }
 ];
 
@@ -90,13 +99,25 @@ const router = createRouter({
   linkActiveClass: 'active',
   linkExactActiveClass: 'active',
 
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes
 });
 
-router.beforeEach((to, from, next) => {
+// router.beforeEach((to, from, next) => {
+//   next();
+// });
+
+router.beforeResolve((to, from, next) => {
   document.title = to.meta.title || DefaultTitle;
-  next();
-});
+
+  if (to.name) {
+    NProgress.start()
+  }
+  next()
+})
+
+router.afterEach((to, from) => {
+  NProgress.done()
+})
 
 export default router

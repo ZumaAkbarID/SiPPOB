@@ -13,10 +13,10 @@
         <li class="nav-heading">Dagangan</li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link collapsed" data-bs-target="#produk" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-menu-button-wide"></i><span>Produk</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul id="produk" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
                 <li>
                     <a href="components-alerts.html">
@@ -34,10 +34,10 @@
         </li><!-- End Components Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link collapsed" data-bs-target="#transaksi" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-menu-button-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul id="transaksi" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
                 <li>
                     <a href="components-alerts.html">

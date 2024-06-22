@@ -23,4 +23,12 @@ trait ResponseJson
             'data' => $data
         ], $code);
     }
+
+    public function response_secret(): JsonResponse
+    {
+        return response()->json([
+            'status' => false,
+            'message' => 'INVALID SECRET',
+        ], 302);
+    }
 }

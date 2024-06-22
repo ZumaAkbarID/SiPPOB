@@ -28,10 +28,10 @@ class Authentication extends Controller
                 return redirect()->intended(route('dashboard'));
             else {
                 Auth::logout();
-                return redirect()->route('login')->with('error', 'Akun tidak ditemukan');
+                return redirect()->route('login')->withInput()->with('error', 'Akun tidak ditemukan');
             }
         } else {
-            return redirect()->route('login')->with('error', 'Akun tidak ditemukan');
+            return redirect()->route('login')->withInput()->with('error', 'Akun tidak ditemukan');
         }
     }
 
