@@ -7,10 +7,11 @@
     <div id="about-us-section">
       <div class="about-us-image">
         <img
+          class="logo-amikom"
           src="https://upload.wikimedia.org/wikipedia/id/thumb/c/c7/AMIKOM_LOGO.svg/1200px-AMIKOM_LOGO.svg.png"
           width="808"
           height=""
-          alt="Lobby Image"
+          alt="Logo Amikom"
         />
       </div>
 
@@ -28,7 +29,7 @@
           game di Indonesia dengan layanan pelanggan yang responsif dan
           memuaskan
         </p>
-        <RouterLink :to="{ name: 'home' }">KONTAK</RouterLink>
+        <RouterLink :to="{ name: 'home' }">BERANDA</RouterLink>
       </div>
     </div>
 
@@ -36,9 +37,9 @@
       <div class="history-image">
         <img
           src="/assets/topupin-logo.png"
-          width="808"
+          width="50%"
           height=""
-          alt="Building Pic"
+          alt="Logo Top Up In"
         />
       </div>
 
@@ -96,6 +97,9 @@ a:hover {
 @media screen and (max-width: 860px) {
   .we-are-block {
     height: 2200px;
+  }
+  .logo-amikom{
+    width: 500px;
   }
 }
 
@@ -170,7 +174,7 @@ a:hover {
   .about-us-info {
     margin-right: 400px;
     width: 60%;
-    background: #0c4c9199;
+    /* background: #0c4c9199; */
     padding: 0px 25px 0px 0px;
   }
 }
@@ -325,7 +329,7 @@ a:hover {
   .history-info {
     margin-left: 400px;
     width: 60%;
-    background: #ffffff99;
+    /* background: #ffffff99; */
     padding: 0px 0px 0px 25px;
   }
 }
@@ -385,7 +389,7 @@ a:hover {
   font-family: "Poppins";
 }
 
-@media screen and (max-width: 860px) {
+@media only screen and (max-width: 860px) {
   .history-info p {
     text-align: center;
   }
@@ -403,7 +407,6 @@ a:hover {
 }
 
 .history-info a:hover {
-  background: white;
   color: #404140;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   transform: translateY(10px);
