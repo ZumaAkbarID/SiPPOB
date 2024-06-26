@@ -30,7 +30,7 @@ const routes = [
     }
   },
   {
-    path: '/example',
+    path: '/produk/:id',
     component: () => import('#components/DetailProduct.vue'),
     name: 'detailProduk',
     meta: {
