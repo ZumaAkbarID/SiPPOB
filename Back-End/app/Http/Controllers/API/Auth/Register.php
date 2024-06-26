@@ -28,7 +28,7 @@ class Register extends Controller
                 'password' => Hash::make($request->password)
             ]);
 
-            $this->response_success('Success!', 200, [
+            return $this->response_success('Success!', 200, [
                 'user' => $user
             ]);
         } catch (\Exception $e) {

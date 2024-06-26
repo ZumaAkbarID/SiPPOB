@@ -79,12 +79,22 @@
         </div>
         <!-- Logedin -->
         <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
+          <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
+            <RouterLink
+              :to="{ name: 'dashboard' }"
+              v-if="loggedIn"
+              class="btn btn-sm border-0 nav-register w-full w-lg-auto px-3"
+              aria-current="page"
+              ><i class="fa-solid fa-user"></i> {{ username }}</RouterLink
+            >
+          </div>
           <RouterLink
-            :to="{ name: 'dashboard' }"
             v-if="loggedIn"
+            @click="logout"
             class="btn btn-sm btn-warning nav-register w-full w-lg-auto px-3"
             aria-current="page"
-            ><i class="fa-solid fa-user"></i> {{ username }}</RouterLink
+            ><i class="fa-solid fa-arrow-right-from-bracket"></i>
+            Logout</RouterLink
           >
         </div>
       </div>
@@ -93,6 +103,10 @@
 </template>
 
 <script>
+import axios from "axios";
+import Swal from "sweetalert2";
+import NProgress from "NProgress";
+
 export default {
   name: "Navbar",
 
@@ -109,6 +123,47 @@ export default {
     },
     getUsername() {
       this.username = localStorage.getItem("username");
+    },
+    async logout() {
+      if (this.loggedIn) {
+        NProgress.start();
+
+        await axios
+          .post(
+            this.base_api + "/auth/logout",
+            {
+              headers: {
+                Accept: "application/json",
+                SECRET: this.secret_token,
+              },
+            }
+          )
+          .then((res) => {
+            if (res.data.status) {
+              //change state
+              this.loggedIn = false;
+
+              //redirect dashboard
+              return this.$router.push({ name: "masuk" });
+
+            } else {
+              //set state login failed
+              Swal.fire({
+                title: "Error!",
+                text: res.data.message,
+                icon: "error",
+              });
+            }
+          })
+          .catch((error) => {
+            Swal.fire({
+              title: "Error!",
+              text: error.response.data.message,
+              icon: "error",
+            });
+          });
+        NProgress.done();
+      }
     },
   },
 

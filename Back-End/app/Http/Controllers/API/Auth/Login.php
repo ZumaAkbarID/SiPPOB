@@ -24,6 +24,13 @@ class Login extends Controller
             if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
                 $user = User::find(Auth::user()->id);
 
+                if ($user->role !== 'Member') {
+                    Auth::logout();
+                    return $this->response_error('Login admin tidak disini!', 404, [
+                        'error' => 'is_admin'
+                    ]);
+                }
+
                 return $this->response_success('Success!', 200, [
                     'token' => $user->createToken('Authentication')->plainTextToken
                 ]);
