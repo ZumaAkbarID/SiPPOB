@@ -19,7 +19,7 @@
             class="col-lg-4 col-md-6 col-sm-12"
           >
             <div class="card mb-4 shadow-sm game-card">
-              <img :src="game.image" class="card-img-top" :alt="game.name" />
+              <img :src="this.Storage_url+game.image" class="card-img-top" :alt="game.name" />
               <div class="card-body">
                 <h2 class="card-title">{{ game.name }}</h2>
                 <button
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import Hero from "./partials/Hero.vue";
 
 export default {
@@ -47,24 +48,36 @@ export default {
 
   data() {
     return {
-      games: [ // Daftar game yang akan ditampilkan
-        { id: 1, name: "Mobile Legends", image: "/assets/img/ml.png" }, // Tambahkan game lain sesuai kebutuhan Anda
-        { id: 2, name: "Free Fire", image: "/assets/img/ff.png" },
-        { id: 3, name: "PUBG Mobile", image: "/assets/img/pubg.png" },
-        { id: 4, name: "Call of Duty: Mobile", image: "/assets/img/cod.png" },
-        { id: 5, name: "Arena of Valor", image: "/assets/img/aov.png" },
-        { id: 6, name: "League of Legends", image: "/assets/img/lol.png" },
-        { id: 7, name: "Honor of Kings", image: "/assets/img/hok.png" },
-        { id: 8, name: "Pokemon Unite", image: "/assets/img/pu.png" },
-        { id: 9, name: "Farlight 84", image: "/assets/img/f8.png" },
-        // Tambahkan game lain sesuai kebutuhan Anda
-      ],
+      Storage_url: import.meta.env.VITE_IMAGE_STORAGE_URL+ "/product/",
+      games: [],
+      loggedIn: localStorage.getItem("loggedIn"),
+      token: localStorage.getItem("token"),
+      user: [],
+      validation: [],
+      loginFailed: false,
+      base_api: import.meta.env.VITE_BASE_API,
+      secret_token: import.meta.env.VITE_SECRET_TOKEN,
     };
   },
+  created() {
+    this.fetchCategories();
+  },
   methods: {
+    fetchCategories() {
+      axios.get(`${this.base_api}/categories`, {
+        headers: {
+          Authorization: `Bearer ${this.secret_token}`,
+        },
+      })
+        .then(response => {
+          this.games = response.data.data;
+        })
+        .catch(error => {
+          console.error('Failed to fetch categories:', error);
+        });
+    },
     redirectToTopUp(gameId) {
-      // Ganti URL ini dengan URL yang sesuai untuk halaman top-up game
-      this.$router.push({ path: `/example` });
+      this.$router.push({ path: `/produk/${gameId}` });
     },
   },
 };

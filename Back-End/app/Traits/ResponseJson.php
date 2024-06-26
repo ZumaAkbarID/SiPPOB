@@ -31,4 +31,15 @@ trait ResponseJson
             'message' => 'INVALID SECRET',
         ], 302);
     }
+
+
+    public function response_not_found(): JsonResponse
+    {
+        return response()->json([
+            'status' => false,
+            'message' => 'NOT FOUND',
+        ], 404);
+    }
+    
+
 }
