@@ -19,9 +19,9 @@
             class="col-lg-4 col-md-6 col-sm-12"
           >
             <div class="card mb-4 shadow-sm game-card">
-              <img :src="this.Storage_url+game.image" class="card-img-top" :alt="game.name" />
+              <img :src="Storage_url+game.image" class="card-img-top" :alt="game.name" />
               <div class="card-body">
-                <h2 class="card-title">{{ game.name }}</h2>
+                <h2 class="card-title">{{game.brand}}</h2>
                 <button
                   @click="redirectToTopUp(game.id)"
                   class="btn btn-primary btn-block"
@@ -48,13 +48,8 @@ export default {
 
   data() {
     return {
-      Storage_url: import.meta.env.VITE_IMAGE_STORAGE_URL+ "/product/",
+      Storage_url: import.meta.env.VITE_IMAGE_STORAGE_URL + "/product/",
       games: [],
-      loggedIn: localStorage.getItem("loggedIn"),
-      token: localStorage.getItem("token"),
-      user: [],
-      validation: [],
-      loginFailed: false,
       base_api: import.meta.env.VITE_BASE_API,
       secret_token: import.meta.env.VITE_SECRET_TOKEN,
     };
@@ -69,12 +64,12 @@ export default {
           Authorization: `Bearer ${this.secret_token}`,
         },
       })
-        .then(response => {
-          this.games = response.data.data;
-        })
-        .catch(error => {
-          console.error('Failed to fetch categories:', error);
-        });
+      .then(response => {
+        this.games = response.data.data;
+      })
+      .catch(error => {
+        console.error('Failed to fetch categories:', error);
+      });
     },
     redirectToTopUp(gameId) {
       this.$router.push({ path: `/produk/${gameId}` });
