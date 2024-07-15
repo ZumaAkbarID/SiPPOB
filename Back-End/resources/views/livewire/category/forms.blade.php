@@ -1,4 +1,7 @@
 <div>
+    <div class="alert alert-info">Pengambilan ini pada dasarnya hanya mengambil data kategori produk dari provider.
+        Proses create dilakukan di backend ketika tombol dibawah diklik.</div>
+
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">AMBIL KATEGORI DARI API DIGIFLAZZ</h5>

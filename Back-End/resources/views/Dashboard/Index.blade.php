@@ -83,7 +83,8 @@
                                             <i class="bi bi-currency-dollar"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>$3,264</h6>
+                                            <h6>Rp {{ number_format($remaining_balance['data']['deposit'], 0, ',', '.') }}
+                                            </h6>
 
                                         </div>
                                     </div>
@@ -120,7 +121,7 @@
                                             <i class="bi bi-people"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>1244</h6>
+                                            <h6>{{ number_format(count($new_member), 0, ',', '.') }}</h6>
                                         </div>
                                     </div>
 
@@ -236,7 +237,33 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Member terbaru <span></span></h5>
 
-                                        INI TABEL PENDAFTARAN
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-hovered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Username</th>
+                                                        <th>Email</th>
+                                                        <th>Tanggal Join</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @php
+                                                        $i_mem = 1;
+                                                    @endphp
+                                                    @forelse ($new_member as $item)
+                                                        <tr>
+                                                            <td>{{ $item->username }}</td>
+                                                            <td>{{ $item->email }}</td>
+                                                            <td>{{ date('d M Y H:i:s', strtotime($item->created_at)) }}</td>
+                                                        </tr>
+                                                    @empty
+                                                        <tr>
+                                                            <td colspan="3" class="text-center">Tidak ada data</td>
+                                                        </tr>
+                                                    @endforelse
+                                                </tbody>
+                                            </table>
+                                        </div>
 
                                     </div>
 

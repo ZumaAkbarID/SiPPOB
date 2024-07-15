@@ -113,7 +113,10 @@ export default {
   data() {
     return {
       loggedIn: false,
-      username: "user",
+      username: "",
+      token: "",
+      base_api: import.meta.env.VITE_BASE_API,
+      secret_token: import.meta.env.VITE_SECRET_TOKEN,
     };
   },
 
@@ -124,20 +127,64 @@ export default {
     getUsername() {
       this.username = localStorage.getItem("username");
     },
-    async logout() {
+    getToken() {
+      this.token = localStorage.getItem("token");
+    },
+    async checkLogin() {
       if (this.loggedIn) {
-        NProgress.start();
-
+        axios.defaults.withCredentials = true;
         await axios
           .post(
-            this.base_api + "/auth/logout",
+            this.base_api + "/user",
+            {},
             {
               headers: {
+                Authorization: `Bearer ${this.token}`,
                 Accept: "application/json",
                 SECRET: this.secret_token,
               },
             }
           )
+          .then((res) => {
+            localStorage.setItem("username", res.data.username);
+            this.getLoggedIn();
+            this.getUsername();
+          })
+          .catch((e) => {
+            console.log(e);
+            if (e.response.status === 401) {
+              Swal.fire({
+                title: "Error!",
+                text: "Sesi login kamu telah habis!",
+                icon: "error",
+              });
+              //change state
+              localStorage.removeItem("loggedIn");
+              localStorage.removeItem("username");
+              localStorage.removeItem("token");
+              //redirect dashboard
+              return this.$router.push({ name: "masuk" });
+            } else if (e.response.status === 302) {
+              Swal.fire({
+                title: "Error!",
+                text: "KESALAHAN SISI CLIENT!",
+                icon: "error",
+              });
+            }
+          });
+      }
+    },
+    async logout() {
+      if (this.loggedIn) {
+        NProgress.start();
+
+        await axios
+          .post(this.base_api + "/auth/logout", {
+            headers: {
+              Accept: "application/json",
+              SECRET: this.secret_token,
+            },
+          })
           .then((res) => {
             if (res.data.status) {
               //change state
@@ -145,7 +192,6 @@ export default {
 
               //redirect dashboard
               return this.$router.push({ name: "masuk" });
-
             } else {
               //set state login failed
               Swal.fire({
@@ -173,6 +219,8 @@ export default {
       handler() {
         this.getLoggedIn();
         this.getUsername();
+        this.getToken();
+        this.checkLogin();
       },
     },
   },

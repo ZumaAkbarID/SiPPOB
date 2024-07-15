@@ -24,6 +24,14 @@ trait ResponseJson
         ], $code);
     }
 
+    public function response_auth(): JsonResponse
+    {
+        return response()->json([
+            'status' => false,
+            'message' => 'UNAUTHENTICATED',
+        ], 201);
+    }
+
     public function response_secret(): JsonResponse
     {
         return response()->json([
@@ -32,7 +40,6 @@ trait ResponseJson
         ], 302);
     }
 
-
     public function response_not_found(): JsonResponse
     {
         return response()->json([
@@ -40,6 +47,4 @@ trait ResponseJson
             'message' => 'NOT FOUND',
         ], 404);
     }
-    
-
 }
