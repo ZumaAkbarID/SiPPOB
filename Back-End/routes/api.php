@@ -7,6 +7,7 @@ use App\Http\Middleware\VerifySecret;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\LandingPage;
+use App\Http\Controllers\API\Transaction;
 
 Route::group([
     'middleware' => VerifySecret::class
@@ -23,6 +24,8 @@ Route::group([
         Route::post('login', [Login::class, 'login']);
         Route::post('logout', [Logout::class, 'logout']);
     });
+    Route::get('categories', [LandingPage::class, 'getCategories']);
+    Route::get('product/{id}', [LandingPage::class, 'getProduct']);
+    Route::get('category/{id}', [LandingPage::class, 'getCategory']);
+    Route::post('transaction/order', [Transaction::class, 'placeOrder']);
 });
-
-Route::get('categories', [LandingPage::class, 'getCategories']);

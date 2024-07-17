@@ -19,9 +19,13 @@
             class="col-lg-4 col-md-6 col-sm-12"
           >
             <div class="card mb-4 shadow-sm game-card">
-              <img :src="Storage_url+game.image" class="card-img-top" :alt="game.name" />
+              <img
+                :src="Storage_url + game.image"
+                class="card-img-top"
+                :alt="game.name"
+              />
               <div class="card-body">
-                <h2 class="card-title">{{game.brand}}</h2>
+                <h2 class="card-title">{{ game.brand }}</h2>
                 <button
                   @click="redirectToTopUp(game.id)"
                   class="btn btn-primary btn-block"
@@ -35,7 +39,8 @@
       </div>
     </div>
 
-    <layout-footer /> <!-- Tambahkan footer -->
+    <layout-footer />
+    <!-- Tambahkan footer -->
   </div>
 </template>
 
@@ -59,17 +64,18 @@ export default {
   },
   methods: {
     fetchCategories() {
-      axios.get(`${this.base_api}/categories`, {
-        headers: {
-          Authorization: `Bearer ${this.secret_token}`,
-        },
-      })
-      .then(response => {
-        this.games = response.data.data;
-      })
-      .catch(error => {
-        console.error('Failed to fetch categories:', error);
-      });
+      axios
+        .get(`${this.base_api}/categories`, {
+          headers: {
+            SECRET: this.secret_token,
+          },
+        })
+        .then((response) => {
+          this.games = response.data.data;
+        })
+        .catch((error) => {
+          console.error("Failed to fetch categories:", error);
+        });
     },
     redirectToTopUp(gameId) {
       this.$router.push({ path: `/produk/${gameId}` });
@@ -78,7 +84,8 @@ export default {
 };
 </script>
 
-<style scoped> /* Gaya CSS untuk komponen LandingPage */
+<style scoped>
+/* Gaya CSS untuk komponen LandingPage */
 .landing {
   padding: auto;
   background-color: rgb(30 32 34); /* Warna ungu */
@@ -97,7 +104,7 @@ export default {
   padding: ; /* Berikan jarak antara teks dan batas */
 }
 
-.game-card {;
+.game-card {
   height: auto; /* Set tinggi kartu */
   margin-bottom: 20px; /* Tambahkan jarak antara kartu */
 }
@@ -148,13 +155,15 @@ export default {
   box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.5); /* Efek bayangan saat fokus */
 }
 
-@media (max-width: 992px) { /* Atur kartu untuk layar berukuran kecil */
+@media (max-width: 992px) {
+  /* Atur kartu untuk layar berukuran kecil */
   .card-img-top {
     height: 150px; /* Atur tinggi gambar untuk layar berukuran kecil */
   }
 }
 
-@media (max-width: 768px) { /* Atur kartu untuk layar berukuran sangat kecil */
+@media (max-width: 768px) {
+  /* Atur kartu untuk layar berukuran sangat kecil */
   .card {
     margin-bottom: 10px; /* Atur margin bawah kartu untuk layar berukuran kecil */
   }
