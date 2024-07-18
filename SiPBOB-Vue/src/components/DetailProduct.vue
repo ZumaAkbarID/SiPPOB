@@ -34,7 +34,8 @@
               />
               <small class="small text-white mt-2"
                 >Pastikan data benar, perhatikan spasi, jika MLBB ketik seperti
-                berikut <code>2131233 3433</code> id< spasi >zona
+                berikut <code>2131233 3433</code> id< spasi >zona, jika Voucher
+                isi nomor WhatsApp contoh <code>0812xxxx</code>
               </small>
             </div>
           </div>
@@ -98,15 +99,74 @@
   </div>
 
   <layout-footer />
+  <loading
+    v-model:active="isLoading"
+    :can-cancel="false"
+    :is-full-page="fullPage"
+  />
+
+  <div class="modal" id="modalBuyConfirm">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Konfirmasi Pembelian</h4>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <small class="text-secondary">Pastikan data benar!</small>
+          <table class="table table-striped">
+            <tr>
+              <td>ID/Nickname</td>
+              <td>{{ dataOrder["idGame"] }}</td>
+            </tr>
+            <tr>
+              <td>Produk</td>
+              <td id="modalProduk">{{ dataOrder["categoryName"] }}</td>
+            </tr>
+            <tr>
+              <td>Item</td>
+              <td id="modalItem">{{ dataOrder["itemName"] }}</td>
+            </tr>
+            <tr>
+              <td>Harga</td>
+              <td id="modalHarga">{{ formatPrice(dataOrder["itemPrice"]) }}</td>
+            </tr>
+            <tr>
+              <td>WhatsApp</td>
+              <td id="modalWhatsApp">{{ dataOrder["phone"] }}</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" @click="modal.hide()">
+            Batal
+          </button>
+          <button type="button" @click="lanjutBeli" class="btn btn-warning">
+            Lanjut Beli
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+// import $ from "jquery";
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/css/index.css";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Modal } from "bootstrap";
 
 export default {
   data() {
     return {
+      isLoading: false,
+      fullPage: true,
       loggedIn: localStorage.getItem("loggedIn"),
       token: localStorage.getItem("token"),
       Storage_url: import.meta.env.VITE_IMAGE_STORAGE_URL + "/product/",
@@ -119,7 +179,15 @@ export default {
       phoneNumber: "08",
       id_game: "",
       phoneNumberPattern: /^08\d{0,12}$/,
+      modalConfirm: null,
+      dataOrder: [],
     };
+  },
+  components: {
+    Loading,
+  },
+  mounted() {
+    this.modal = new Modal(document.getElementById("modalBuyConfirm"));
   },
   created() {
     this.fetchCategories();
@@ -149,6 +217,7 @@ export default {
       }
     },
     async fetchCategories() {
+      this.isLoading = true;
       await axios
         .get(`${this.base_api}/product/${this.$route.params.id}`, {
           headers: {
@@ -157,12 +226,16 @@ export default {
         })
         .then((response) => {
           this.items = response.data.data;
+          this.isLoading = false;
         })
         .catch((error) => {
           console.error("Failed to fetch product:", error);
+          this.isLoading = false;
+          return this.$router.push({ name: "404" });
         });
     },
     async fetchProduct() {
+      this.isLoading = true;
       await axios
         .get(`${this.base_api}/category/${this.$route.params.id}`, {
           headers: {
@@ -171,12 +244,16 @@ export default {
         })
         .then((response) => {
           this.product = response.data.data;
+          this.isLoading = false;
         })
         .catch((error) => {
           console.error("Failed to fetch product:", error);
+          this.isLoading = false;
+          return this.$router.push({ name: "404" });
         });
     },
     async beliSekarang(form) {
+      this.isLoading = true;
       let errorMessage = "";
 
       if (!this.id_game) errorMessage = "ID/Nickname game wajib di isi!";
@@ -189,7 +266,8 @@ export default {
           "Nomor HP harus diawali dengan 08 dan hanya berisi angka tanpa spasi.";
       }
 
-      if (errorMessage)
+      if (errorMessage) {
+        this.isLoading = false;
         return Swal.fire({
           title: "Error!",
           text: errorMessage,
@@ -200,7 +278,21 @@ export default {
           timer: 1500,
           timerProgressBar: true,
         });
-
+      }
+      this.dataOrder = {
+        category: this.$route.params.id,
+        categoryName: this.product.brand,
+        item: this.selectedItem.id,
+        itemName: this.selectedItem.product_name,
+        itemPrice: this.selectedItem.price,
+        idGame: this.id_game,
+        phone: this.phoneNumber,
+      };
+      this.isLoading = false;
+      this.modal.show();
+    },
+    async lanjutBeli() {
+      this.isLoading = true;
       axios.defaults.withCredentials = this.loggedIn ?? false;
       await axios
         .post(
@@ -220,28 +312,31 @@ export default {
           }
         )
         .then((res) => {
-          console.log(res);
           if (res.data.status) {
-            Swal.fire({
-              title: "OK!",
-              text: res.data.message,
-              icon: "success",
+            this.modal.hide();
+            this.isLoading = false;
+            return this.$router.push({
+              name: "pembayaran",
+              query: { order_id: res.data.data.order_id },
             });
           } else {
-            //set state login failed
             Swal.fire({
               title: "Error!",
-              text: res.data.message,
+              html: `${res.data.message}<br>${res.data.data.message}`,
               icon: "error",
             });
           }
+          this.modal.hide();
+          this.isLoading = false;
         })
         .catch((error) => {
+          this.modal.hide();
           Swal.fire({
             title: "Error!",
             text: error.response.data.message,
             icon: "error",
           });
+          this.isLoading = false;
         });
     },
   },

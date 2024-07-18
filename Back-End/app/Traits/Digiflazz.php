@@ -2,7 +2,10 @@
 
 namespace App\Traits;
 
+use App\Models\Product;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 trait Digiflazz
 {
@@ -54,6 +57,34 @@ trait Digiflazz
             ]);
 
             return json_decode($request->body(), true);
+        } catch (\Exception $e) {
+            return [
+                'error' => true
+            ];
+        }
+    }
+
+    public function makeTransaction(Transaction $trx)
+    {
+        try {
+            $product = Product::find($trx->product_id);
+
+            $request = Http::post($this->baseurl . "transaction", [
+                'username' => $this->username,
+                'buyer_sku_code' => $product->buyer_sku_code,
+                'customer_no' => $trx->id_game,
+                'ref_id' => $trx->reff_id,
+                'sign' => $this->signGen($trx->reff_id, prod: false),
+                'testing' => true,
+            ]);
+
+            $resp = json_decode($request->body(), true);
+
+            if ($resp['data']['status'] == 'Gagal') {
+                $product->update(['status' => 'Failed']);
+            } else if ($resp['data']['status'] == 'Sukses') {
+                $product->update(['status' => 'Success']);
+            }
         } catch (\Exception $e) {
             return [
                 'error' => true

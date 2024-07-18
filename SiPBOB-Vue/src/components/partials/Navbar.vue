@@ -88,14 +88,14 @@
               ><i class="fa-solid fa-user"></i> {{ username }}</RouterLink
             >
           </div>
-          <RouterLink
-            v-if="loggedIn"
-            @click="logout"
+          <button
+            type="button"
             class="btn btn-sm btn-warning nav-register w-full w-lg-auto px-3"
-            aria-current="page"
-            ><i class="fa-solid fa-arrow-right-from-bracket"></i>
-            Logout</RouterLink
+            @click="logout"
+            v-if="loggedIn"
           >
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+          </button>
         </div>
       </div>
     </div>
@@ -179,16 +179,23 @@ export default {
         NProgress.start();
 
         await axios
-          .post(this.base_api + "/auth/logout", {
-            headers: {
-              Accept: "application/json",
-              SECRET: this.secret_token,
-            },
-          })
+          .post(
+            this.base_api + "/auth/logout",
+            {},
+            {
+              headers: {
+                Accept: "application/json",
+                Authorization: `Bearer ${this.token}`,
+                SECRET: this.secret_token,
+              },
+            }
+          )
           .then((res) => {
             if (res.data.status) {
               //change state
-              this.loggedIn = false;
+              localStorage.removeItem("loggedIn");
+              localStorage.removeItem("username");
+              localStorage.removeItem("token");
 
               //redirect dashboard
               return this.$router.push({ name: "masuk" });

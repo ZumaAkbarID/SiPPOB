@@ -12,7 +12,7 @@ class Logout extends Controller
 {
     use ResponseJson;
 
-    function login(Request $request): JsonResponse
+    function logout(Request $request): JsonResponse
     {
         try {
             Auth::logout();

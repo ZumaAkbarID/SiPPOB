@@ -41,10 +41,18 @@
 
     <layout-footer />
     <!-- Tambahkan footer -->
+
+    <loading
+      v-model:active="isLoading"
+      :can-cancel="false"
+      :is-full-page="fullPage"
+    />
   </div>
 </template>
 
 <script>
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/css/index.css";
 import axios from "axios";
 import Hero from "./partials/Hero.vue";
 
@@ -53,18 +61,24 @@ export default {
 
   data() {
     return {
+      isLoading: false,
+      fullPage: true,
       Storage_url: import.meta.env.VITE_IMAGE_STORAGE_URL + "/product/",
       games: [],
       base_api: import.meta.env.VITE_BASE_API,
       secret_token: import.meta.env.VITE_SECRET_TOKEN,
     };
   },
+  components: {
+    Loading,
+  },
   created() {
     this.fetchCategories();
   },
   methods: {
-    fetchCategories() {
-      axios
+    async fetchCategories() {
+      this.isLoading = true;
+      await axios
         .get(`${this.base_api}/categories`, {
           headers: {
             SECRET: this.secret_token,
@@ -72,9 +86,11 @@ export default {
         })
         .then((response) => {
           this.games = response.data.data;
+          this.isLoading = false;
         })
         .catch((error) => {
           console.error("Failed to fetch categories:", error);
+          this.isLoading = false;
         });
     },
     redirectToTopUp(gameId) {
@@ -101,7 +117,7 @@ export default {
 .lead {
   font-size: 1.25rem; /* Ukuran teks yang sedikit lebih besar */
   color: #fff; /* Warna teks putih */
-   /* Berikan jarak antara teks dan batas */
+  /* Berikan jarak antara teks dan batas */
 }
 
 .game-card {

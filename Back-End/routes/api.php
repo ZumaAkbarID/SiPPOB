@@ -3,10 +3,12 @@
 use App\Http\Controllers\API\Auth\Login;
 use App\Http\Controllers\API\Auth\Logout;
 use App\Http\Controllers\API\Auth\Register;
+use App\Http\Controllers\API\DigiflazzHandler;
 use App\Http\Middleware\VerifySecret;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\LandingPage;
+use App\Http\Controllers\API\MidtransHandler;
 use App\Http\Controllers\API\Transaction;
 
 Route::group([
@@ -28,4 +30,8 @@ Route::group([
     Route::get('product/{id}', [LandingPage::class, 'getProduct']);
     Route::get('category/{id}', [LandingPage::class, 'getCategory']);
     Route::post('transaction/order', [Transaction::class, 'placeOrder']);
+    Route::get('transaction/{order_id}', [Transaction::class, 'getOrder']);
 });
+
+Route::post('notification/midtrans', [MidtransHandler::class, 'notification']);
+Route::post('notification/digiflazz', [DigiflazzHandler::class, 'notification']);
