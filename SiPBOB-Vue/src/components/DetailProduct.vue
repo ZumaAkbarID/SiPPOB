@@ -296,3 +296,4 @@ export default {
   border-radius: 15px;
 }
 </style>
+<!-- komen bawah -->
