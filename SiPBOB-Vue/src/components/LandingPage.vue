@@ -101,7 +101,7 @@ export default {
 .lead {
   font-size: 1.25rem; /* Ukuran teks yang sedikit lebih besar */
   color: #fff; /* Warna teks putih */
-  padding: ; /* Berikan jarak antara teks dan batas */
+   /* Berikan jarak antara teks dan batas */
 }
 
 .game-card {
@@ -169,3 +169,4 @@ export default {
   }
 }
 </style>
+<!-- komen bawah -->
