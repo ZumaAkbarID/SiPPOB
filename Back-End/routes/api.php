@@ -30,6 +30,7 @@ Route::group([
     Route::get('product/{id}', [LandingPage::class, 'getProduct']);
     Route::get('category/{id}', [LandingPage::class, 'getCategory']);
     Route::post('transaction/order', [Transaction::class, 'placeOrder']);
+    Route::post('validate-wa', [Transaction::class, 'validateWa']);
     Route::get('transaction/{order_id}', [Transaction::class, 'getOrder']);
 });
 

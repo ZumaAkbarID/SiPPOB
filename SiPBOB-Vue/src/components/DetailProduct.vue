@@ -181,6 +181,10 @@ export default {
       phoneNumberPattern: /^08\d{0,12}$/,
       modalConfirm: null,
       dataOrder: [],
+      isValidWA: {
+        error: false,
+        message: false,
+      },
     };
   },
   components: {
@@ -215,6 +219,32 @@ export default {
           timerProgressBar: true,
         });
       }
+      this.isValidWA = {
+        error: false,
+        message: false,
+      };
+    },
+    async validateWA() {
+      await axios
+        .post(
+          `${this.base_api}/validate-wa`,
+          {
+            phone: this.phoneNumber,
+          },
+          {
+            headers: {
+              Accept: "application/json",
+              SECRET: this.secret_token,
+            },
+          }
+        )
+        .then((response) => {
+          this.isValidWA = response.data.data;
+        })
+        .catch((error) => {
+          console.error("Failed to fetch product:", error);
+          return this.$router.push({ name: "404" });
+        });
     },
     async fetchCategories() {
       this.isLoading = true;
@@ -255,6 +285,21 @@ export default {
     async beliSekarang(form) {
       this.isLoading = true;
       let errorMessage = "";
+
+      await this.validateWA();
+      if (this.isValidWA.error || this.isValidWA.message !== true) {
+        this.isLoading = false;
+        return Swal.fire({
+          title: "Error!",
+          text: "Nomor WhatsApp tidak valid",
+          icon: "error",
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 1500,
+          timerProgressBar: true,
+        });
+      }
 
       if (!this.id_game) errorMessage = "ID/Nickname game wajib di isi!";
 

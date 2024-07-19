@@ -437,26 +437,17 @@ export default {
         // Optional
         onSuccess: function (result) {
           console.log(result);
-          return this.$router.push({
-            name: "pembayaran",
-            query: { order_id: this.order_id },
-          });
+          window.location.reload();
         },
         // Optional
         onPending: function (result) {
           console.log(result);
-          return this.$router.push({
-            name: "pembayaran",
-            query: { order_id: this.order_id },
-          });
+          window.location.reload();
         },
         // Optional
         onError: function (result) {
           console.log(result);
-          return this.$router.push({
-            name: "pembayaran",
-            query: { order_id: this.order_id },
-          });
+          window.location.reload();
         },
       });
     },

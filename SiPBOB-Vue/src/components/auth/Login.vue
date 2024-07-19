@@ -85,12 +85,16 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import NProgress from "NProgress";
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/css/index.css";
 
 export default {
   name: "Login",
 
   data() {
     return {
+      isLoading: false,
+      fullPage: true,
       //state loggedIn with localStorage
       loggedIn: localStorage.getItem("loggedIn"),
       //state token
@@ -106,10 +110,14 @@ export default {
       secret_token: import.meta.env.VITE_SECRET_TOKEN,
     };
   },
+  components: {
+    Loading,
+  },
   methods: {
     async login() {
       if (this.user.username && this.user.password) {
         NProgress.start();
+        this.isLoading = true;
 
         await axios
           .post(
@@ -133,6 +141,7 @@ export default {
 
               //change state
               this.loggedIn = true;
+              this.isLoading = false;
 
               //redirect dashboard
               return this.$router.push({ name: "dashboard" });
@@ -152,6 +161,7 @@ export default {
               icon: "error",
             });
           });
+        this.isLoading = false;
         NProgress.done();
       }
 

@@ -29,3 +29,5 @@ Route::group([
     Route::get('kategori', [Category::class, 'index'])->name('kategori.index');
     Route::resource('produk', Product::class);
 });
+
+Route::get('test', [Dashboard::class, 'test']);

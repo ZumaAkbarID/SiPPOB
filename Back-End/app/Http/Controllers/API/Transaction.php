@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Transaction as ModelsTransaction;
+use App\Traits\Fonnte;
 use App\Traits\ResponseJson;
 use Carbon\Carbon;
 use Exception;
@@ -19,7 +20,12 @@ use Midtrans\Snap;
 
 class Transaction extends Controller
 {
-    use ResponseJson;
+    use ResponseJson, Fonnte;
+
+    function validateWa(Request $request): JsonResponse
+    {
+        return $this->response_success('OK', 200, $this->validate_number($request->phone));
+    }
 
     function placeOrder(Request $request): JsonResponse
     {
@@ -87,6 +93,23 @@ class Transaction extends Controller
                 'snap_token' => $snapToken,
                 'id_game' => $request->idGame
             ]);
+
+            $text = '';
+            if ($user)
+                $text .= "Salam, $user->username\n";
+            else
+                $text .= "Salam, Pembeli Rahasia\n";
+            $text .= "Berikut rincian pembelian kamu\n\n";
+            $text .= "==============================\n";
+            $text .= "ID/Nickname : $request->idGame\n";
+            $text .= "Item : $product->product_name\n";
+            $text .= "Harga: Rp " . number_format($product->price, 0, ',', '.') . "\n";
+            $text .= "Status Pembayaran: *Unpaid*\n";
+            $text .= "Link Bayar: \n" . env('FE_URL') . "/pembayaran?order_id=$orderId\nKadaluarsa dalam 15 menit kedepan \n";
+            $text .= "==============================\n\n";
+            $text .= "Terima Kasih telah mempercayai kami❤\n\n";
+
+            $this->send_message($request->phone, $text);
 
             return $this->response_success('Sukses!', 200, [
                 'order_id' => $orderId

@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use App\Models\Product;
 use App\Models\Transaction;
+use App\Models\WebMaster;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -68,6 +69,7 @@ trait Digiflazz
     {
         try {
             $product = Product::find($trx->product_id);
+            $WebMaster = WebMaster::where('key', 'env')->first();
 
             $request = Http::post($this->baseurl . "transaction", [
                 'username' => $this->username,
@@ -75,7 +77,7 @@ trait Digiflazz
                 'customer_no' => $trx->id_game,
                 'ref_id' => $trx->reff_id,
                 'sign' => $this->signGen($trx->reff_id, prod: false),
-                'testing' => true,
+                'testing' => $WebMaster->value == 'production' ? true : false,
             ]);
 
             $resp = json_decode($request->body(), true);
