@@ -53,7 +53,7 @@
     <!-- Main JS File -->
     <script src="/assets/js/main.js"></script>
 
-    @include('Partials.Sweetalert2')
+    @include('Partials.SweetAlert2')
 
 </body>
 
