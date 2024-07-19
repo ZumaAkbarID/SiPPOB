@@ -84,7 +84,6 @@
 <script>
 import axios from "axios";
 import Swal from "sweetalert2";
-import NProgress from "NProgress";
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/css/index.css";
 
@@ -116,7 +115,6 @@ export default {
   methods: {
     async login() {
       if (this.user.username && this.user.password) {
-        NProgress.start();
         this.isLoading = true;
 
         await axios
@@ -162,7 +160,6 @@ export default {
             });
           });
         this.isLoading = false;
-        NProgress.done();
       }
 
       this.validation = [];

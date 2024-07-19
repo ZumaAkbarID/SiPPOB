@@ -105,7 +105,6 @@
 <script>
 import axios from "axios";
 import Swal from "sweetalert2";
-import NProgress from "NProgress";
 
 export default {
   name: "Navbar",
@@ -176,7 +175,6 @@ export default {
     },
     async logout() {
       if (this.loggedIn) {
-        NProgress.start();
 
         await axios
           .post(
@@ -215,7 +213,6 @@ export default {
               icon: "error",
             });
           });
-        NProgress.done();
       }
     },
   },
