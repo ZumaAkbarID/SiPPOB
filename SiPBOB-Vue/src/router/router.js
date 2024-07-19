@@ -1,5 +1,4 @@
 import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router'
-import NProgress from 'NProgress'
 
 const AppName = import.meta.env.VITE_APP_NAME;
 const DefaultTitle = 'Topup Murah Lengkap Legal | ' + AppName;
@@ -110,14 +109,7 @@ const router = createRouter({
 router.beforeResolve((to, from, next) => {
   document.title = to.meta.title || DefaultTitle;
 
-  if (to.name) {
-    NProgress.start()
-  }
   next()
-})
-
-router.afterEach((to, from) => {
-  NProgress.done()
 })
 
 export default router
