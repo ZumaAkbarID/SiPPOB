@@ -18,7 +18,11 @@
       <div class="container">
         <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12">
           <h1 class="fw-bold">Hubungi Kami!</h1>
-          <p>Mengalami masalah dengan waktu transaksi? Ingin memiliki bisnis permainan kredit? Silakan hubungi kami di bawah ini sesuai dengan kebutuhan Anda!</p>
+          <p>
+            Mengalami masalah dengan waktu transaksi? Ingin memiliki bisnis
+            permainan kredit? Silakan hubungi kami di bawah ini sesuai dengan
+            kebutuhan Anda!
+          </p>
         </div>
       </div>
     </div>
@@ -27,7 +31,10 @@
       <div class="row">
         <div class="col p-5">
           <h2>TOP-UP IN</h2>
-          <p>Jl. Ring Road Utara, Ngringin, Condongcatur, Kecamatan Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta</p>
+          <p>
+            Jl. Ring Road Utara, Ngringin, Condongcatur, Kecamatan Depok,
+            Kabupaten Sleman, Daerah Istimewa Yogyakarta
+          </p>
           <p>
             <i class="fa-regular fa-envelope"></i> info@topupin.com<br />
             <i class="fa-solid fa-phone"></i> +62008953646
@@ -35,34 +42,62 @@
         </div>
         <div class="col p-5">
           <h2>Kirim Laporan / Permintaan</h2>
-          <p>Jika Anda memiliki masalah atau pertanyaan, jangan ragu untuk menghubungi kami dengan mengisi formulir di bawah ini.</p>
-          <form action="#" method="post">
+          <p>
+            Jika Anda memiliki masalah atau pertanyaan, jangan ragu untuk
+            menghubungi kami dengan mengisi formulir di bawah ini.
+          </p>
+          <form @submit.prevent="kirimPesan">
             <div class="mb-3">
               <label for="nama" class="form-label">Nama</label>
-              <input type="text" class="form-control" id="nama" required />
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                required
+                v-model="data.nama"
+              />
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required />
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                required
+                v-model="data.email"
+              />
             </div>
 
             <div class="mb-3">
               <label for="tipe" class="form-label">Tipe</label>
-              <select class="form-select" aria-label="Default select example">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                required
+                v-model="data.tipe"
+              >
                 <option selected>Pilih Tipe</option>
-                <option value="1">Chat Customer Service</option>
-                <option value="2">Masalah bug/error</option>
-                <option value="3">Masalah akun</option>
-                <option value="4">Masalah transaksi</option>
-                <option value="5">Daftar reseller</option>
-                <option value="6">Penawaran kerjasama</option>
-                <option value="7">Daftar affiliator</option>
-                <option value="8">Request fitur</option>
+                <option value="Chat Customer Service">
+                  Chat Customer Service
+                </option>
+                <option value="Masalah bug/error">Masalah bug/error</option>
+                <option value="Masalah akun">Masalah akun</option>
+                <option value="Masalah transaksi">Masalah transaksi</option>
+                <option value="Daftar reseller">Daftar reseller</option>
+                <option value="Penawaran kerjasam">Penawaran kerjasama</option>
+                <option value="Daftar affiliator">Daftar affiliator</option>
+                <option value="Request fitur">Request fitur</option>
               </select>
             </div>
             <div class="mb-3">
               <label for="pesan" class="form-label">Pesan</label>
-              <textarea class="form-control" id="pesan" rows="5" required></textarea>
+              <textarea
+                class="form-control"
+                id="pesan"
+                rows="5"
+                required
+                v-model="data.pesan"
+              ></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Kirim Pesan</button>
           </form>
@@ -81,7 +116,71 @@
 </template>
 
 <script>
-export default {};
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/css/index.css";
+import axios from "axios";
+import Swal from "sweetalert2";
+
+export default {
+  data() {
+    return {
+      isLoading: false,
+      fullPage: true,
+      base_api: import.meta.env.VITE_BASE_API,
+      secret_token: import.meta.env.VITE_SECRET_TOKEN,
+      data: [],
+    };
+  },
+  components: {
+    Loading,
+  },
+  methods: {
+    async kirimPesan() {
+      this.isLoading = true;
+      await axios
+        .post(
+          this.base_api + "/send-message",
+          {
+            nama: this.data.nama,
+            email: this.data.email,
+            tipe: this.data.tipe,
+            pesan: this.data.pesan,
+          },
+          {
+            headers: {
+              Accept: "application/json",
+              SECRET: this.secret_token,
+            },
+          }
+        )
+        .then((res) => {
+          if (res.data.status) {
+            this.isLoading = false;
+            return Swal.fire({
+              title: "Sukses!",
+              html: "Pesan berhasil terkirim",
+              icon: "success",
+            });
+          } else {
+            Swal.fire({
+              title: "Error!",
+              html: `${res.data.message}`,
+              icon: "error",
+            });
+          }
+          this.isLoading = false;
+        })
+        .catch((error) => {
+          Swal.fire({
+            title: "Error!",
+            text: error.response.data.message,
+            icon: "error",
+          });
+          this.isLoading = false;
+        });
+    },
+  },
+};
 </script>
 
 <style scoped>
