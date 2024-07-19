@@ -7,5 +7,6 @@
         Developed with <span class="text-danger">&hearts;</span> by <a
             href="https://github.com/ZumaAkbarID/SiPPOB?tab=readme-ov-file#-collaborators">{{ config('app.name') }}
             Team</a>
+        <br>SE ADANYA NGEJAR WAKTU :D
     </div>
 </footer><!-- End Footer -->

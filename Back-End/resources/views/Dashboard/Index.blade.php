@@ -21,7 +21,7 @@
                     <div class="row">
 
                         <!-- Sales Card -->
-                        <div class="col-xxl-4 col-md-6">
+                        <div class="col-xxl-3 col-md-6">
                             <div class="card info-card sales-card">
 
                                 <div class="filter">
@@ -47,7 +47,7 @@
                                             <i class="bi bi-cart"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>145</h6>
+                                            <h6>{{ number_format($trxMonth->count(), 0, ',', '.') }}</h6>
 
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                         </div><!-- End Sales Card -->
 
                         <!-- Revenue Card -->
-                        <div class="col-xxl-4 col-md-6">
+                        <div class="col-xxl-3 col-md-6">
                             <div class="card info-card revenue-card">
 
                                 <div class="filter">
@@ -94,7 +94,7 @@
                         </div><!-- End Revenue Card -->
 
                         <!-- Customers Card -->
-                        <div class="col-xxl-4 col-xl-12">
+                        <div class="col-xxl-3 col-md-6">
 
                             <div class="card info-card customers-card">
 
@@ -130,6 +130,36 @@
 
                         </div><!-- End Customers Card -->
 
+                        <div class="col-xxl-3 col-md-6">
+
+                            <div class="card info-card customers-card">
+
+                                <div class="filter">
+                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
+                                            class="bi bi-three-dots"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <li class="dropdown-header text-start">
+                                            <h6>Underdevelopment</h6>
+                                        </li>
+
+                                        {{-- <li><a class="dropdown-item" href="#">Today</a></li>
+                                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                                        <li><a class="dropdown-item" href="#">This Year</a></li> --}}
+                                    </ul>
+                                </div>
+
+                                <div class="card-body">
+                                    <h5 class="card-title">SETTING ENVIRONMENT</h5>
+
+                                    <div class="ps-3">
+                                        @livewire('setting-env')
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div><!-- End Customers Card -->
+
                         <div class="row">
                             <!-- Reports -->
                             <div class="col-lg-8">
@@ -156,17 +186,26 @@
                                         <div id="reportsChart"></div>
 
                                         <script>
-                                            document.addEventListener("DOMContentLoaded", () => {
+                                            document.addEventListener("DOMContentLoaded", function() {
+                                                const paidData = @json($paidData);
+                                                const unpaidData = @json($unpaidData);
+                                                const expiredData = @json($expiredData);
+                                                const salesData = @json($salesData);
+                                                const categories = @json($categories);
+
                                                 new ApexCharts(document.querySelector("#reportsChart"), {
                                                     series: [{
+                                                        name: 'Paid',
+                                                        data: paidData,
+                                                    }, {
+                                                        name: 'Unpaid',
+                                                        data: unpaidData
+                                                    }, {
+                                                        name: 'Expired',
+                                                        data: expiredData
+                                                    }, {
                                                         name: 'Sales',
-                                                        data: [31, 40, 28, 51, 42, 82, 56],
-                                                    }, {
-                                                        name: 'Revenue',
-                                                        data: [11, 32, 45, 32, 34, 52, 41]
-                                                    }, {
-                                                        name: 'Customers',
-                                                        data: [15, 11, 32, 18, 9, 24, 11]
+                                                        data: salesData
                                                     }],
                                                     chart: {
                                                         height: 350,
@@ -178,7 +217,7 @@
                                                     markers: {
                                                         size: 4
                                                     },
-                                                    colors: ['#4154f1', '#2eca6a', '#ff771d'],
+                                                    colors: ['#4154f1', '#2eca6a', '#ff771d', '#abcdef'],
                                                     fill: {
                                                         type: "gradient",
                                                         gradient: {
@@ -197,15 +236,11 @@
                                                     },
                                                     xaxis: {
                                                         type: 'datetime',
-                                                        categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z",
-                                                            "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z",
-                                                            "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z",
-                                                            "2018-09-19T06:30:00.000Z"
-                                                        ]
+                                                        categories: categories // tanggal yang diambil dari response
                                                     },
                                                     tooltip: {
                                                         x: {
-                                                            format: 'dd/MM/yy HH:mm'
+                                                            format: 'dd/MM/yy'
                                                         },
                                                     }
                                                 }).render();
@@ -296,53 +331,37 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Customer</th>
-                                                <th scope="col">Product</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Status</th>
+                                                <th scope="col">WhatsApp</th>
+                                                <th scope="col">Produk</th>
+                                                <th scope="col">Harga</th>
+                                                <th scope="col">Status Payment</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th scope="row"><a href="#">#2457</a></th>
-                                                <td>Brandon Jacob</td>
-                                                <td><a href="#" class="text-primary">At praesentium minu</a>
-                                                </td>
-                                                <td>$64</td>
-                                                <td><span class="badge bg-success">Approved</span></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><a href="#">#2147</a></th>
-                                                <td>Bridie Kessler</td>
-                                                <td><a href="#" class="text-primary">Blanditiis dolor omnis
-                                                        similique</a></td>
-                                                <td>$47</td>
-                                                <td><span class="badge bg-warning">Pending</span></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><a href="#">#2049</a></th>
-                                                <td>Ashleigh Langosh</td>
-                                                <td><a href="#" class="text-primary">At recusandae
-                                                        consectetur</a></td>
-                                                <td>$147</td>
-                                                <td><span class="badge bg-success">Approved</span></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><a href="#">#2644</a></th>
-                                                <td>Angus Grady</td>
-                                                <td><a href="#" class="text-primar">Ut voluptatem id earum
-                                                        et</a></td>
-                                                <td>$67</td>
-                                                <td><span class="badge bg-danger">Rejected</span></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row"><a href="#">#2644</a></th>
-                                                <td>Raheem Lehner</td>
-                                                <td><a href="#" class="text-primary">Sunt similique
-                                                        distinctio</a></td>
-                                                <td>$165</td>
-                                                <td><span class="badge bg-success">Approved</span></td>
-                                            </tr>
+
+                                            @foreach ($trxToday as $item)
+                                                <tr>
+                                                    <th scope="row"><a
+                                                            href="{{ env('FE_URL') }}/pembayaran?order_id={{ $item->reff_id }}">{{ $item->reff_id }}</a>
+                                                    </th>
+                                                    <td>{{ $item->whatsapp }}</td>
+                                                    <td><a href="{{ env('FE_URL') }}/produk/{{ $item->category_id }}"
+                                                            class="text-primary">{{ $item->product_name }}</a>
+                                                    </td>
+                                                    <td>Rp {{ number_format($item->price, 0, ',', '.') }}</td>
+                                                    <td>
+                                                        <span
+                                                            class="badge 
+                                                        @if ($item->payment == 'Unpaid') bg-warning
+                                                        @elseif($item->payment == 'Paid')
+                                                        bg-success
+                                                        @else
+                                                        bg-danger @endif
+                                                        ">{{ $item->payment }}</span>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+
                                         </tbody>
                                     </table>
 
