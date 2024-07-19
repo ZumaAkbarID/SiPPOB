@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\Auth\Login;
 use App\Http\Controllers\API\Auth\Logout;
 use App\Http\Controllers\API\Auth\Register;
+use App\Http\Controllers\API\Contact;
 use App\Http\Controllers\API\DigiflazzHandler;
 use App\Http\Middleware\VerifySecret;
 use Illuminate\Http\Request;
@@ -32,6 +33,7 @@ Route::group([
     Route::post('transaction/order', [Transaction::class, 'placeOrder']);
     Route::post('validate-wa', [Transaction::class, 'validateWa']);
     Route::get('transaction/{order_id}', [Transaction::class, 'getOrder']);
+    Route::post('send-message', [Contact::class, 'sendMessage']);
 });
 
 Route::post('notification/midtrans', [MidtransHandler::class, 'notification']);

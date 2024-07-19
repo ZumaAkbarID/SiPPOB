@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Transaction;
+use App\Models\User;
 use App\Traits\Digiflazz;
 use App\Traits\Fonnte;
 use Illuminate\Http\Request;
@@ -66,6 +67,15 @@ class MidtransHandler extends Controller
             $text .= "Terima Kasih telah mempercayai kami❤\n\n";
 
             $this->send_message($trx->whatsapp, $text);
+            if ($trx->user_id) {
+                try {
+                    $user = User::find($trx->user_id);
+                    //code...
+                    $user->update(['point' => $user->point + $trx->price * 0.01]);
+                } catch (\Throwable $th) {
+                    //throw $th;
+                }
+            }
             return response('', 200);
         } else if ($transaction == 'pending') {
             // TODO set payment status in merchant's database to 'Pending'

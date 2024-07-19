@@ -20,6 +20,7 @@ return new class extends Migration
             $table->enum('role', ['Admin', 'Member'])->default('Member');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('point')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
